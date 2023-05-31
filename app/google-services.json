@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "854332791244",
+    "firebase_url": "https://a-93025.firebaseio.com",
+    "project_id": "a-93025",
+    "storage_bucket": "a-93025.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854332791244:android:8072a5b3f7fb8f817f6569",
+        "android_client_info": {
+          "package_name": "com.meass.calculator_apps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854332791244-p539go6vtl9p1m9e2kilcmsk1pmprj6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWeZK-fe0kvFYx2ki-v9zY-LLO6BguNsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854332791244-p539go6vtl9p1m9e2kilcmsk1pmprj6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

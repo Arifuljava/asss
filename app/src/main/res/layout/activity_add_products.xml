@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".AddProducts">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+
+                    android:id="@+id/somitiname"
+
+                    android:hint="পণ্যর নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/sovapoti"
+
+                    android:hint="বিক্রয় মূল্য"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/sovapoti_english"
+
+
+                    android:hint="ক্রয় মূল্য"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/fatherba"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="বৰ্তমান মজুত আছে"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //5
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/fatheren"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="পণ্যর বিস্তারিত •"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //6
+                <Spinner
+                    android:textAlignment="center"
+                    android:id="@+id/mother"
+
+                    android:layout_marginTop="10dp"
+
+                    android:hint="মাতার নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></Spinner>
+                //7
+                <Spinner
+                    android:textAlignment="center"
+                    android:id="@+id/p_address"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="বর্তমান ঠিকানা"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></Spinner>//8
+                <CheckBox
+                    android:textAlignment="center"
+                    android:id="@+id/ppaddress"
+                    android:layout_marginTop="10dp"
+                    android:text="স্টক কমের এলার্ট"
+
+
+                    android:hint="স্টক কমের এলার্ট"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></CheckBox>
+                //9
+                <CheckBox
+                    android:textAlignment="center"
+                    android:id="@+id/votar"
+                    android:layout_marginTop="10dp"
+                    android:text="ভ্যাট প্রযোজ্য?"
+
+
+                    android:hint="ভোটার আইডি"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></CheckBox>
+                //10
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/natii"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="ওয়ারেন্টি সময় দিন"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //11
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/b_date"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="ডিস্কাউন্ট
+টাকা %"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //12
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/s_kisti"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="মেয়াদ শুরুর তারিখ"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="datetime"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //13
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/ocupa"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="মেয়াদ শেষের তারিখ"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="datetime"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //142
+
+                ///27
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:text="পণ্যের ছবি"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:enabled="false"
+                    android:id="@+id/imagee"
+                    android:src="@drawable/ic_baseline_image_24"
+                    android:text="সদস্যর লাইভ ছবি নিন"
+
+
+
+
+                    android:hint="দুইজন পরিচচয়দানকারীর
+স্বাক্ষর"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    ></ImageView>
+                //office
+                <Button
+                    android:minWidth="250dp"
+                    android:onClick="barcode"
+
+
+                    android:id="@+id/cirLoginButton11"
+                    style="@style/loginButton"
+
+                    android:text="বার কোড স্কান করুন"
+                    android:background="@drawable/gradient_background"
+
+                    android:textAllCaps="true"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+
+                <Button
+                    android:minWidth="250dp"
+
+
+                    android:id="@+id/cirLoginButton"
+                    style="@style/loginButton"
+
+                    android:text="পণ্যটি যুক্ত করুন"
+                    android:background="@drawable/gradient_background"
+                    android:layout_marginBottom="250dp"
+                    android:textAllCaps="true"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/loginViewsMargin"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

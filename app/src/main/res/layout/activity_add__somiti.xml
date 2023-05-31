@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".Add_Somiti">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <EditText
+                    android:layout_marginTop="20dp"
+
+                    android:id="@+id/somitiname"
+
+                    android:hint="সমিতির নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    android:textAlignment="center"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/sovapoti"
+
+                    android:hint="সভাপতির নাম বাংলায়"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/sovapoti_english"
+
+
+                    android:hint="সভাপতির নাম ইংরেজিতে"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/fatherba"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="পিতার নাম বাংলায়"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //5
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/fatheren"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="পিতার নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //6
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/mother"
+                    android:layout_marginTop="10dp"
+
+                    android:hint="মাতার নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //7
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/p_address"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="বর্তমান ঠিকানা"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>//8
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/ppaddress"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="স্থায়ী ঠিকানা"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //9
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/votar"
+                    android:layout_marginTop="10dp"
+
+
+                    android:hint="ভোটার আইডি"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //10
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/natii"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="জাতীয়তা"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //11
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/b_date"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="জন্ম তারিখ"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="datetime"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //12
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/s_kisti"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="সাপ্তাহিক কিস্তি"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //13
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/ocupa"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="পেশা"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //14
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/refer"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="পূর্ব সদস্যর নাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //15
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/pasword"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="পূর্ব সদস্যর পিন"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //16
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/sikar"
+                    android:layout_marginTop="10dp"
+
+
+
+                    android:text="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
+                    android:enabled="false"
+
+                    android:hint="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+//17
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/signeture"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="সদস্যর স্বাক্ষর"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <Button
+                    android:minWidth="250dp"
+
+
+                    android:id="@+id/cirLoginButton"
+                    style="@style/loginButton"
+
+                    android:text="এটি যোগ করুন "
+                    android:background="@drawable/gradient_background"
+                    android:layout_marginBottom="250dp"
+                    android:textAllCaps="true"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/loginViewsMargin"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

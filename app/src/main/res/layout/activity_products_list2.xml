@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".ProductsList2">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/dailyCheckCard"
+                        android:layout_width="0dp"
+                        android:onClick="add_balance"
+                        android:layout_height="50dp"
+                        android:background="@drawable/allbus"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                    <Button
+                        android:id="@+id/taskCard"
+                        android:layout_width="0dp"
+                        android:visibility="invisible"
+                        android:onClick="send_money"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </Button>
+                    <Button
+                        android:id="@+id/taskCard6"
+                        android:onClick="add_user"
+                        android:layout_width="0dp"
+                        android:background="@drawable/ww"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="কিস্তি গ্রহণ"
+                        android:textColor="@color/white"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </Button>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <androidx.appcompat.widget.SearchView
+
+                    android:layout_margin="@dimen/space_10dp"
+                    android:background="@drawable/border"
+
+                    app:queryHint="পণ্যের নাম লিখুন"
+                    android:textColor="@color/black"
+                    android:inputType="textImeMultiLine"
+
+                    android:layout_width="match_parent"
+                    android:id="@+id/serachname"
+                    android:layout_marginBottom="0dp"
+                    android:layout_height="@dimen/space_50dp"
+                    ></androidx.appcompat.widget.SearchView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="@dimen/space_10dp"
+                        android:layout_marginLeft="@dimen/space_10dp"
+
+                        android:layout_width="match_parent"
+                        android:id="@+id/rreeeed"
+                        android:layout_marginBottom="50dp"
+                        android:layout_height="wrap_content"
+                        ></androidx.recyclerview.widget.RecyclerView>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="@dimen/space_10dp"
+                        android:layout_marginLeft="@dimen/space_10dp"
+                        android:layout_marginBottom="50dp"
+                        android:id="@+id/empty_cart"
+                        android:layout_width="match_parent"
+                        app:lottie_fileName="empty_list.json"
+                        android:layout_height="300dp"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/cartempty"
+                        android:visibility="invisible"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

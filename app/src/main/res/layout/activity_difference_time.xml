@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".DifferenceTime">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@drawable/myclock"
+                        >
+
+                    </ImageView>
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:inputType="numberDecimal"
+                        android:hint="0  "
+                        android:text="Time calculation "
+                        android:id="@+id/hintss"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+
+
+                        android:layout_width="match_parent"
+                        android:enabled="false"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_below="@id/image1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="false"
+                    android:padding="8dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginLeft="20dp"
+                    android:textAllCaps="true"
+                    android:textSize="12dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/josefinsans_regular"
+                    android:text="Start Time"
+                    android:gravity="center_vertical" />
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Hour "
+                        android:fontFamily="@font/josefinsans_regular"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:maxLength="2"
+                        android:hint="12"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/people1"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:maxLength="2"
+
+                        android:hint="45"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/koto_point1"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/josefinsans_regular"
+
+
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+                    <Spinner
+                        android:layout_marginTop="5dp"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/koto_roti"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/josefinsans_regular"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Price"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </Spinner>
+
+
+
+                </LinearLayout>
+                //2
+
+                //price
+
+                //3
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_below="@id/image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="false"
+                        android:padding="8dp"
+                        android:minHeight="40dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_marginLeft="20dp"
+                        android:textAllCaps="true"
+                        android:textSize="12dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:text="End Time"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Hour "
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:hint="2"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/result11"
+                        android:layout_width="0dp"
+                        android:enabled="true"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:maxLength="2"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:hint="3"
+
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/tips1"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="0dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+                    <Spinner
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:id="@+id/spinner2"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Price"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </Spinner>
+
+
+
+
+                </LinearLayout>
+
+                //result1
+
+                //result2
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_below="@id/image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="false"
+                        android:padding="8dp"
+                        android:minHeight="40dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_marginLeft="20dp"
+                        android:textAllCaps="true"
+                        android:textSize="12dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:text="RESULt"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginBottom="250dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+
+                        android:layout_marginTop="10dp"
+                        android:inputType="textMultiLine"
+                        android:maxLines="1000"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:layout_weight="1"
+                        android:text="Difference\n----- "
+                        android:id="@+id/unit2"
+                        android:enabled="false"
+                        android:fontFamily="@font/josefinsans_regular"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

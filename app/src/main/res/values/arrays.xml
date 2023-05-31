@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wight"
+        >
+        <item>Gram</item>
+        <item>Kilogram</item>
+        <item>Metric Ton</item>
+        <item>Pound</item>
+    </string-array>
+    <string-array name="hour"
+        >
+        <item>24 Hours</item>
+    </string-array>
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="sex"
+        >
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="periode"
+        >
+        <item>Years Period</item>
+        <item>Months Period</item>
+    </string-array>
+    <string-array name="tax"
+        >
+        <item>Add</item>
+        <item>Subtraction</item>
+    </string-array>
+    <string-array name="lcm"
+        >
+        <item>Select LCM/GCD</item>
+        <item>LCM</item>
+        <item>GCD</item>
+
+    </string-array>
+    <string-array name="ration"
+        >
+        <item>Select Ratio Calculations</item>
+        <item>Ratio</item>
+        <item>Numerator</item>
+        <item>Denominator</item>
+    </string-array>
+    <string-array name="avgprop"
+        >
+        <item>Select Proportional Calculations</item>
+        <item>Direct Proportional</item>
+        <item>Indirectly Proportional</item>
+    </string-array>
+    <string-array name="average"
+        >
+        <item>Select Average Calculations</item>
+        <item>Arthmetic</item>
+        <item>Geometric</item>
+        <item>Harmonic</item>
+    </string-array>
+    <string-array name="algebraper"
+        >
+        <item>Select Percentage Calculations</item>
+        <item>Discount</item>
+        <item>Increase</item>
+        <item>Simple Percentage</item>
+        <item>Increase/Decrease</item>
+        <item>Percentage of A from B</item>
+    </string-array>
+    <!-- Reply Preference -->
+
+    //
+    //
+    <string-array name="country_arrays">
+        <item>BDT</item>
+        <item>USD</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>INR</item>
+    </string-array>
+    <string-array name="productcate">
+        <item>পণ্য বিভাগ নির্বাচন করুন</item>
+        <item>কস্মেটিক্স</item>
+        <item>ভেষজ</item>
+        <item>পোশাক</item>
+
+    </string-array>
+<string-array name="subcos"
+    >
+    <item>সাবকেটগরি নির্বাচন করুন</item>
+    <item>শাবান</item>
+    <item>মেরিল</item>
+    <item>স্লো</item>
+    <item>ক্রিম</item>
+    <item>হ্যান্ডওয়াশ</item>
+
+</string-array>
+    <string-array name="subveg">
+        <item>সাবকেটগরি নির্বাচন করুন</item>
+        <item>মেডিসিন</item>
+        <item>হরবাল</item>
+    </string-array>
+    <string-array name="subposhak">
+        <item>সাবকেটগরি নির্বাচন করুন</item>
+        <item>শার্ট</item>
+        <item>প্যান্ট</item>
+        <item>টি-শার্ট</item>
+        <item>জোব্বা</item>
+        <item>পাঞ্জাবি</item>
+        <item>থ্রি পিস</item>
+        <item>টু পিস</item>
+        <item>বোরখা</item>
+        <item>ওরনা</item>
+        <item>পায়জামা</item>
+    </string-array>
+</resources>

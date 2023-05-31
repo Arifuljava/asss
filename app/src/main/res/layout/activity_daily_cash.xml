@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".DailyCash">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/jje"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="প্রতিদিনের বিক্রির ইতিহাস"
+                        android:layout_marginRight="10dp"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                </LinearLayout>
+                //2
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/tarik"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="তারিখ "
+                            android:layout_marginRight="10dp"
+
+                            android:textColor="@color/black"
+                            >
+
+
+
+                        </Button>
+
+                        <Button
+                            android:layout_marginLeft="10dp"
+
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/tarik"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="১০/০৩/২০২২"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                //3
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/jje"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="১০/০৩/২০২২ "
+                            android:layout_marginRight="10dp"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+
+                        <Button
+                            android:layout_marginLeft="10dp"
+
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/kk"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="0 টাকা"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                ///4
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/jje"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="নিজের প্রয়োজনে খরচ"
+                        android:layout_marginRight="10dp"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                </LinearLayout>
+                //5
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/jje"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:visibility="invisible"
+                        android:text="নিজের প্রয়োজনে খরচ"
+                        android:layout_marginRight="10dp"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                    <Button
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/kk"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="0 টাকা"
+                        android:layout_marginRight="10dp"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                    <Button
+                        android:visibility="invisible"
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:background="@drawable/jje"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:text="নিজের প্রয়োজনে খরচ"
+                        android:layout_marginRight="10dp"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </Button>
+                </LinearLayout>
+//7
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/jje"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="বাকি "
+                            android:layout_marginRight="10dp"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+
+                        <Button
+                            android:layout_marginLeft="10dp"
+
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/black"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="0 টাকা"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+
+
+                    </LinearLayout>
+                    //8
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/jje"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="কোম্পানি থেকে ক্রয় কৃত পণ্য বাবদ"
+                            android:layout_marginRight="10dp"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    >
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/space_10dp"
+        android:layout_marginLeft="@dimen/space_10dp"
+
+        android:layout_width="match_parent"
+        android:id="@+id/rreeeed"
+        android:layout_height="wrap_content"
+        ></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
+                    //9
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/jje"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="এই তারিখে বিক্রি পণ্য দেখুন"
+                            android:layout_marginRight="10dp"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                    </LinearLayout>
+                    //10
+                    <LinearLayout
+                        android:layout_marginBottom="150dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        >
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="@dimen/space_10dp"
+                            android:layout_marginLeft="@dimen/space_10dp"
+
+                            android:layout_width="match_parent"
+                            android:id="@+id/rreeeed"
+                            android:layout_height="wrap_content"
+                            ></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

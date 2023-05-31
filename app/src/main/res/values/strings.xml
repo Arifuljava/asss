@@ -1,0 +1,154 @@
+<resources>
+    <string name="app_name">Calculator Apps</string>
+
+
+    <!--Navigation drawer items-->
+    <string name="home">Home</string>
+    <string name="myprofile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="feedback">Feedback</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+
+
+    ///
+
+    <!-- Strings related to login -->
+    <!-- aduinit id section-->
+    <!-- <string name="admob_app_id">ca-app-pub-7774473624959541~2879529577</string>
+     <string name="ad_unit_id">ca-app-pub-7774473624959541/6375775669</string>
+     <string name="interstitial">ca-app-pub-7774473624959541/9439825222</string> -->
+    ///cal
+    <!-- FirebaseMessagingService -->
+    //calculator
+
+    <string name="clear">C</string>
+    <string name="backspace">⌫</string>
+    <string name="divide">÷</string>
+    <string name="sqrt">√</string>
+    <string name="cuberoot">\u221B</string>
+    <string name="square">x²</string>
+    <string name="cube">x\u00B3</string>
+    <string name="tenpow">10\u207F</string>
+    <string name="sininv">sin\u207B\u00B9</string>
+    <string name="cosinv">cos\u207B\u00B9</string>
+    <string name="taninv">tan\u207B\u00B9</string>
+    <string name="posneg">±</string>
+    <string name="xpown">xⁿ</string>
+    <string name="epown">eⁿ</string>
+    <string name="pi">π</string>
+    <string name="openBracket">(</string>
+    <string name="closeBracket">)</string>
+    <string name="history">History</string>
+
+    <string-array name="length">
+        <item>Nanometer</item>
+        <item>Millimeter</item>
+        <item>Centimeter</item>
+        <item>Meter</item>
+        <item>Kilometer</item>
+        <item>Inches</item>
+        <item>Foot</item>
+        <item>Yards</item>
+        <item>Mile</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>Celsius</item>
+        <item>Farenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+    <string-array name="weight">
+        <item>Milligrams</item>
+        <item>Centigrams</item>
+        <item>Decigrams</item>
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Metric tonnes</item>
+        <item>Pounds</item>
+        <item>Ounces</item>
+    </string-array>
+
+    <string name="deleteHistory">Delete History</string>
+    <string name="mode1">Degree</string>
+    <string name="mode2">Radian</string>
+    <string name="toggle">SWITCH</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="naturalLog">ln</string>
+    <string name="hyperbolicSine">sinh</string>
+    <string name="hyperbolicCosine">cosh</string>
+    <string name="hyperbolicTan">tanh</string>
+    <string name="log">log</string>
+    <string name="Mod">%</string>
+    <string name="inverse">1/x</string>
+    <string name="factorial">x!</string><![CDATA[>
+    ///
+    ]]>
+    <string name="bmi_result">BMI: %s</string>
+    <string name="bmi_cat_1">Very severely underweight</string>
+    <string name="bmi_cat_2">Severely underweight</string>
+    <string name="bmi_cat_3">Underweight</string>
+    <string name="bmi_cat_4">Normal (healthy weight)</string>
+    <string name="bmi_cat_5">Overweight</string>
+    <string name="bmi_cat_6">Obese Class I (Moderately obese)</string>
+    <string name="bmi_cat_7">Obese Class II (Severely obese)</string>
+    <string name="bmi_cat_8">Obese Class III (Very severely obese)</string>
+    <string name="bmi_cat_9">Obese Class IV (Morbidly Obese)</string>
+    <string name="bmi_cat_10">Obese Class V (Super Obese)</string>
+    <string name="bmi_cat_11">Obese Class VI (Hyper Obese)</string>
+    <string name="metric">Metric</string>
+    <string name="default_unit">@string/metric</string>
+    /////
+
+    <string name="powered_by">Powered by</string>
+    <string name="developer_depository">Xonic It Foundation</string>
+
+    <!-- OnBoarding Screen Strings -->
+
+    <!-- Welcome Screen Strings -->
+
+    <!-- Sign Up & Login Screen Strings -->
+
+    <string name="name_hint">Name*</string>
+    <string name="email_hint">Email*</string>
+    <string name="mobile_hint">Mobile*</string>
+    <string name="create_password_hint">Create Password*</string>
+    <string name="confirm_password_hint">Confirm Password*</string>
+    <string name="email_or_mobile_hint">Email or Mobile*</string>
+    <string name="password_hint">Password*</string>
+    <string name="sign_in_title">Get Started!</string>
+    <string name="sign_in_subtitle">Sign in to continue.</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in_btn_text">Sign In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_title">Create Account!</string>
+    <string name="sign_up_subtitle">Sign up to get started.</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="next_btn_text">Next</string>
+
+    <!-- Verify OTP Screen Strings -->
+
+    <!-- Forgot Password Screen Strings -->
+
+    <!-- Home Screen Strings -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+</resources>

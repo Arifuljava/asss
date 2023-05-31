@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".ForceActivity">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@drawable/energy"
+                        >
+
+                    </ImageView>
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:inputType="numberDecimal"
+                        android:hint="0  "
+                        android:text="Force Calculation"
+                        android:id="@+id/hintss"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+
+
+                        android:layout_width="match_parent"
+                        android:enabled="false"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/koto_roti"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/josefinsans_regular"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Newton"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+
+                        android:hint="1"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/koto_point1"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/josefinsans_regular"
+
+
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+                //2
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Dyne "
+                        android:fontFamily="@font/josefinsans_regular"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:hint="100000"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/people1"
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+                //3
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Kilogram Force"
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:hint="0.1"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/tips1"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="0dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+
+                //result1
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+
+                    >
+                    <EditText
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/mytip"
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Pound Force "
+
+                        android:textAlignment="center"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </EditText>
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:inputType="numberDecimal|textMultiLine"
+
+                        android:maxLines="500"
+                        android:hint="0.22"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/mytip"
+                        android:id="@+id/result11"
+                        android:layout_width="0dp"
+                        android:enabled="true"
+                        android:textSize="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="5dp"
+
+
+                        android:layout_weight="1"
+
+
+
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                    </EditText>
+
+
+
+
+
+                </LinearLayout>
+                //result2
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

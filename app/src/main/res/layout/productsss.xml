@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#fff"
+    android:id="@+id/firstlay"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="@dimen/space_5dp"
+    android:layout_marginTop="@dimen/space_5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view8"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:cardBackgroundColor="#44546a"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="10dp"
+
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/dailyCheckCard"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="1"
+
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/taskCard"
+                        android:layout_width="0dp"
+                        android:visibility="visible"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ক্যালকুলেটর"
+                        android:textColor="@color/white"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/taskCard6"
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="কিস্তি গ্রহণ"
+                        android:textColor="@color/white"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </TextView>
+
+
+                </LinearLayout>
+                //2
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/dailyCheckC1ard"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="1"
+
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#ECEC2E"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/taskCa1rd"
+                        android:layout_width="0dp"
+                        android:visibility="visible"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ক্যালকুলেটর"
+                        android:textColor="@color/white"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/taskCar11d6"
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="কিস্তি গ্রহণ"
+                        android:textColor="@color/white"
+
+                        android:foreground="?attr/selectableItemBackground"
+                        >
+
+
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/idsecondlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <com.codesgood.views.JustifiedTextView
+
+            android:id="@+id/sikar"
+            android:layout_marginTop="10dp"
+
+
+
+
+            android:enabled="false"
+            android:textAlignment="viewStart"
+
+
+            android:background="@drawable/mainpro"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:inputType="textMultiLine"
+            android:layout_marginRight="@dimen/space_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            ></com.codesgood.views.JustifiedTextView>
+    </LinearLayout>
+
+</LinearLayout>

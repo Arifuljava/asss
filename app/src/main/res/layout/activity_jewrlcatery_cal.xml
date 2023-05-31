@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+
+    tools:context=".JewrlcateryCal">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <EditText
+                    android:layout_marginTop="20dp"
+
+
+                    android:enabled="false"
+                    android:textAlignment="center"
+
+                    android:hint="সমিতির নাম"
+                    android:text=" টাকার হিসাব করুন"
+                    android:background="@drawable/jul"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //3
+                <EditText
+                    android:layout_marginTop="20dp"
+
+
+                    android:enabled="true"
+                    android:textAlignment="center"
+
+                    android:hint="বর্তমান গহনার দাম লিখুন এখানে (১ ভরি)"
+
+                    android:background="@drawable/jul"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:id="@+id/mottaka"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+                <EditText
+                    android:background="@drawable/jul"
+                    android:id="@+id/kotovori"
+                    android:layout_width="0dp"
+                    android:inputType="numberDecimal"
+
+
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="কত ভরি"
+                    android:textAlignment="center"
+
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+
+
+                </EditText>
+
+                <EditText
+                    android:hint="কত আনা "
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/jul"
+                    android:id="@+id/koto_ana"
+                    android:layout_width="0dp"
+
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+
+
+
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+                </EditText>
+
+
+
+
+
+            </LinearLayout>
+<LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp"
+
+    >
+    <EditText
+        android:inputType="numberDecimal"
+        android:background="@drawable/jul"
+        android:id="@+id/koto_roti"
+        android:layout_width="0dp"
+
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:hint="কত রতি "
+        android:textAlignment="center"
+
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        >
+
+
+
+    </EditText>
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:hint="কত পয়েন্ট "
+        android:textAlignment="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/jul"
+        android:id="@+id/koto_point"
+        android:layout_width="0dp"
+
+        android:layout_height="50dp"
+        android:layout_weight="1"
+
+
+
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground">
+    </EditText>
+
+
+
+
+
+</LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:minWidth="250dp"
+
+
+                    android:id="@+id/cirLoginButton"
+                    style="@style/loginButton"
+
+                    android:text="হিসাব করুন"
+                    android:background="#fe5722"
+
+                    android:textAllCaps="true"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/loginViewsMargin"/>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_marginBottom="5000dp"
+                    android:id="@+id/relationlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    >
+                    <EditText
+                        android:id="@+id/finaltakaka"
+                        android:layout_marginTop="20dp"
+
+
+                        android:enabled="false"
+                        android:textAlignment="center"
+
+                        android:hint="বর্তমান গহনার দাম লিখুন এখানে (১ ভরি)"
+
+                        android:background="@drawable/jul"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="@dimen/space_20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        ></EditText>
+                    <EditText
+                        android:layout_marginTop="20dp"
+
+
+                        android:enabled="false"
+                        android:id="@+id/detailss"
+                        android:textAlignment="center"
+
+                        android:hint="বর্তমান গহনার দাম লিখুন এখানে (১ ভরি)"
+
+                        android:background="@drawable/jul"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="textMultiLine"
+                        android:layout_marginRight="@dimen/space_20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        android:maxLines="500"
+
+                        ></EditText>
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <LinearLayout
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <Button
+                                android:id="@+id/dailyChfffeckCard"
+                                android:layout_width="0dp"
+                                android:onClick="delte"
+                                android:layout_height="50dp"
+                                android:background="#E41212"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:text="এটি মুছুন"
+
+                                android:textColor="@color/white"
+                                >
+
+
+
+                            </Button>
+                            <Button
+                                android:id="@+id/taskCard"
+                                android:layout_width="0dp"
+                                android:visibility="invisible"
+
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+
+                                android:foreground="?attr/selectableItemBackground"
+                                >
+
+
+
+                            </Button>
+                            <Button
+                                android:onClick="saves"
+                                android:id="@+id/taskCard6"
+
+                                android:layout_width="0dp"
+                                android:background="#175E57"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:text="সংরক্ষণ করুন"
+                                android:textColor="@color/white"
+
+                                android:foreground="?attr/selectableItemBackground"
+                                >
+
+
+
+                            </Button>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+</RelativeLayout>

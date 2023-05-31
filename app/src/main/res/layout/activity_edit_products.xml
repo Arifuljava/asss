@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".EditProducts">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:background="@drawable/bakiedit"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minHeight="70dp"
+                    >
+
+                    <TextView
+
+                        android:id="@+id/dailyCheckCard"
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#d4733f"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#d7a718"
+                        >
+
+
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:background="@drawable/baki"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minHeight="70dp"
+                    >
+
+                    <TextView
+
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#fff"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#fff"
+                        >
+
+
+
+                    </TextView>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/baki"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minHeight="70dp"
+                    >
+
+                    <TextView
+
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="@color/white"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#fff"
+                        >
+
+
+
+                    </TextView>
+                    <TextView
+
+                        android:layout_width="0dp"
+
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:textAlignment="viewStart"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="ক্যালকুলেটর"
+
+                        android:textColor="#d7a718"
+                        >
+
+
+
+                    </TextView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <EditText
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+
+                            android:textColor="@color/black"
+                            android:hint="গ্রাহকের নাম"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+                        <EditText
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+                            android:hint="গ্রাহকের নম্বর"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+
+                            android:textColor="@color/black"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+                        <EditText
+                            android:visibility="invisible"
+
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            android:hint="জমা"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+                //
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <EditText
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+                            android:hint="পণ্য নাম"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+
+                            android:textColor="@color/black"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+                        <EditText
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+                            android:hint="পরিমান"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+
+                            android:textColor="@color/black"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+                        <EditText
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:hint="দাম"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="50dp"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </EditText>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_width="0dp"
+                            android:background="@drawable/border"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:layout_marginBottom="5dp"
+                            android:textAlignment="center"
+                            android:textSize="12dp"
+                         android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:hint="পণ্যের তালিকা"
+
+                            android:textColor="@color/black"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </TextView>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginBottom="150dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:visibility="visible"
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/baki"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:layout_marginLeft="50dp"
+
+                            android:text="আপডেট"
+                            android:layout_marginRight="50dp"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

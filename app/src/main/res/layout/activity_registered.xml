@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registered">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/setup_image"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/bussinessman"
+                    android:layout_marginLeft="10dp"
+                    app:civ_border_color="#000"
+                    app:civ_border_width="2dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select User Image"
+                    android:id="@+id/changeProfilePhoto"
+                    android:layout_below="@+id/setup_image"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/red_connectify"
+                    android:textSize="16sp"/>
+            </RelativeLayout>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/space_10dp"
+                android:layout_marginRight="@dimen/space_10dp"
+                android:gravity="center_vertical"
+                android:text="Phone Number"
+                android:textStyle="normal"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+
+
+                ></TextView>
+            <EditText
+
+                android:id="@+id/username"
+                android:maxLength="50"
+                android:enabled="false"
+                android:hint="      Enter your Phone Number"
+                android:background="@drawable/border"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:inputType="text"
+                android:layout_marginRight="@dimen/space_20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50dp"
+                ></EditText>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/space_10dp"
+                android:layout_marginRight="@dimen/space_10dp"
+                android:gravity="center_vertical"
+                android:text="Full Name"
+                android:textStyle="normal"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+
+
+                ></TextView>
+            <EditText
+                android:id="@+id/fullname"
+                android:maxLength="50"
+                android:hint="      Enter your name"
+                android:background="@drawable/border"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:inputType="text"
+                android:layout_marginRight="@dimen/space_20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50dp"
+                ></EditText>
+            //<TextView
+            android:visibility="invisible"
+            android:id="@+id/textammount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="@dimen/space_10dp"
+            android:gravity="center_vertical"
+            android:text="The name is flor your remember"
+            android:textStyle="normal"
+            android:textAlignment="viewStart"
+            android:textColor="@color/newColor"
+
+
+            ></TextView>
+            <TextView
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/space_10dp"
+                android:layout_marginRight="@dimen/space_10dp"
+                android:gravity="center_vertical"
+                android:text="Enter Location"
+                android:textStyle="normal"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+
+
+                ></TextView>
+            <EditText
+                android:maxLength="50"
+                android:id="@+id/location"
+                android:hint="      Enter your address"
+                android:background="@drawable/border"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginRight="@dimen/space_20dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50dp"
+                ></EditText>
+            //
+
+
+            <Button
+                android:id="@+id/cirLoginButton"
+                style="@style/loginButton"
+                android:text="SUBMIT"
+                android:background="@color/newColor"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true"
+
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

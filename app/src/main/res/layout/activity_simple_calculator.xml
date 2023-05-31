@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+
+    tools:context=".SimpleCalculator">
+    <RelativeLayout
+
+        android:id="@+id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_background"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/main_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_below="@id/main_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="@dimen/space_10dp"
+                    android:layout_marginRight="@dimen/space_10dp"
+                    android:gravity="center_vertical"
+                    android:text="প্রথম নম্বর লিখুন"
+                    android:textStyle="normal"
+
+                    android:textAlignment="viewStart"
+
+                    android:textColor="#000"
+
+
+                    ></TextView>
+                <EditText
+                    android:layout_marginTop="5dp"
+
+                    android:id="@+id/somitiname"
+
+
+                    android:hint="প্রথম নম্বর প্রবেশ করুন"
+                    android:textAlignment="center"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <TextView
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="@dimen/space_10dp"
+                    android:layout_marginRight="@dimen/space_10dp"
+                    android:gravity="center_vertical"
+                    android:text='দ্বিতীয় নম্বর লিখুন'
+                    android:textStyle="normal"
+                    android:textAlignment="viewStart"
+
+                    android:textColor="#000"
+
+
+                    ></TextView>
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/sovapoti"
+
+                    android:hint="দ্বিতীয় নম্বর প্রবেশ করুন"
+                    android:textAlignment="center"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    >
+                    <LinearLayout
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <Button
+                            android:id="@+id/dailyCheckCard"
+                            android:layout_width="0dp"
+                            android:onClick="add"
+                            android:layout_height="50dp"
+                            android:background="@drawable/allbus"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="যোগ"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                        <Button
+                            android:id="@+id/taskCard"
+                            android:layout_width="0dp"
+                            android:visibility="invisible"
+
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+                        <Button
+                            android:id="@+id/taskCard6"
+                            android:onClick="minus"
+                            android:layout_width="0dp"
+                            android:background="@drawable/ww"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="বিয়োগ"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+                    </LinearLayout>
+                    //2
+                    <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <Button
+
+                            android:layout_width="0dp"
+                            android:onClick="mul"
+                            android:layout_height="50dp"
+                            android:background="@drawable/jje"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="গুণ"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                        <Button
+
+                            android:layout_width="0dp"
+                            android:visibility="invisible"
+
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+                        <Button
+
+                            android:onClick="division"
+                            android:layout_width="0dp"
+                            android:background="@drawable/kk"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="ভাগ"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/mylay"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/result"
+
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/space_10dp"
+                        android:layout_marginRight="@dimen/space_10dp"
+                        android:gravity="center_vertical"
+                        android:text="প্রথম নম্বর লিখুন"
+                        android:textStyle="normal"
+
+                        android:textAlignment="center"
+
+                        android:textColor="#000"
+                        android:textSize="25dp"
+
+
+                        ></TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

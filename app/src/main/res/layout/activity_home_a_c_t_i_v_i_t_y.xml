@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".HomeACTIVITY">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbarwrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/white"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="left"
+            style="@style/CustomTheme"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:visibility="visible"
+                android:textColor="@color/white"
+                android:id="@+id/appname"
+                android:textSize="20dp"
+                android:gravity="start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:padding="5dp"/>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/notifintro"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:lottie_fileName="ripple.json"
+                    app:lottie_loop="true"
+android:visibility="gone"
+                    android:onClick="Notifications"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    app:lottie_autoPlay="true" />
+
+                <ImageView
+                    android:id="@+id/view_profile"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:src="@drawable/businessman"
+                    android:onClick="viewProfile"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <include
+            layout="@layout/new_"
+            ></include>
+    </RelativeLayout>
+
+</RelativeLayout>
