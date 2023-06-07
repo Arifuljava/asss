@@ -117,7 +117,7 @@
                     android:layout_marginTop="10dp"
 
 
-                    android:hint="পিতার নাম"
+                    android:hint="পিতার নাম ইংরেজি"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -282,6 +282,8 @@
                 <EditText
                     android:textAlignment="center"
                     android:id="@+id/refer"
+                    android:visibility="gone"
+                    android:text="texttdemo"
                     android:layout_marginTop="10dp"
 
 
@@ -303,6 +305,8 @@
                     android:textAlignment="center"
                     android:id="@+id/pasword"
                     android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:text="texttdemo"
 
 
 
