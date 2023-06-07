@@ -312,7 +312,7 @@
 
                     android:hint="দুইজন পরিচচয়দানকারীর
 স্বাক্ষর"
-                    android:background="@drawable/border"
+
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
                     android:textSize="15dp"

@@ -75,9 +75,9 @@ public class Add_Somiti extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(somitiname.getText().toString()) || TextUtils.isEmpty(sovapoti.getText().toString()) || TextUtils.isEmpty(signeture.getText().toString()) ||
-                        TextUtils.isEmpty(pasword.getText().toString()) || TextUtils.isEmpty(refer.getText().toString()) || TextUtils.isEmpty(ocupa.getText().toString()) || TextUtils.isEmpty(s_kisti.getText().toString()) || TextUtils.isEmpty(b_date.getText().toString()) ||
-                        TextUtils.isEmpty(natii.getText().toString()) || TextUtils.isEmpty(votar.getText().toString()) || TextUtils.isEmpty(ppaddress.getText().toString()) || TextUtils.isEmpty(mother.getText().toString()) ||
-                        TextUtils.isEmpty(fatheren.getText().toString()) || TextUtils.isEmpty(fatherba.getText().toString()) || TextUtils.isEmpty(sovapoti_english.getText().toString()) || TextUtils.isEmpty(p_address.getText().toString())
+                        TextUtils.isEmpty(pasword.getText().toString()) || TextUtils.isEmpty(refer.getText().toString()) || TextUtils.isEmpty(ocupa.getText().toString()) || TextUtils.isEmpty(s_kisti.getText().toString()) ||
+                         TextUtils.isEmpty(ppaddress.getText().toString()) ||
+                        TextUtils.isEmpty(fatheren.getText().toString()) || TextUtils.isEmpty(fatherba.getText().toString()) || TextUtils.isEmpty(sovapoti_english.getText().toString())
 
                 ) {
 

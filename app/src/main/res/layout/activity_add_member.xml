@@ -199,7 +199,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //10
-                <EditText
+                <Spinner
                     android:textAlignment="center"
                     android:id="@+id/natii"
                     android:layout_marginTop="10dp"
@@ -217,7 +217,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></Spinner>
                 //11
                 <EditText
                     android:textAlignment="center"
@@ -238,6 +238,47 @@
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
                     ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/refer"
+
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="মোট কিস্তির পরিমাণ"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                //31
+                <Spinner
+                    android:textAlignment="center"
+                    android:id="@+id/kisticategory"
+
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="মোট কিস্তির পরিমাণ"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></Spinner>
                 //12
                 <EditText
                     android:textAlignment="center"
@@ -247,7 +288,7 @@
 
 
 
-                    android:hint="সাপ্তাহিক কিস্তি"
+                    android:hint=" কিস্তি পরিমাণ লিখুন(টাকা) "
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -279,7 +320,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //142
-                <EditText
+                <Spinner
                     android:textAlignment="center"
                     android:id="@+id/relagi"
                     android:layout_marginTop="10dp"
@@ -297,32 +338,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></Spinner>
                 //14
-                <EditText
-                    android:textAlignment="center"
-                    android:id="@+id/refer"
-                    android:layout_marginTop="10dp"
 
-
-
-
-                    android:hint="পূর্ব সদস্যর নাম"
-                    android:background="@drawable/border"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:inputType="textMultiLine"
-                    android:layout_marginRight="@dimen/space_20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="50dp"
-                    ></EditText>
                 //15
                 <EditText
                     android:textAlignment="center"
                     android:id="@+id/pasword"
                     android:layout_marginTop="10dp"
+                    android:text="fgfggfg"
+                    android:visibility="gone"
 
 
 
@@ -339,7 +364,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //16
-                <EditText
+                <CheckBox
                     android:textAlignment="center"
                     android:id="@+id/sikar"
                     android:layout_marginTop="10dp"
@@ -347,7 +372,7 @@
 
 
                     android:text="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
-                    android:enabled="false"
+                    android:enabled="true"
 
                     android:hint="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
                     android:background="@drawable/border"
@@ -359,7 +384,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></CheckBox>
                 //17
 
 
@@ -391,7 +416,7 @@
 
 
                     android:hint="সদস্যর স্বাক্ষর"
-                    android:text="আমার মৃত্যুর পর আমার জমা কৃত সমস্ত টাকা নিম্নলিখিত বাগতিকে প্রদান করার জন্য উত্তরাধিকারী মনোনীত করলাম।"
+                    android:text="আমার মৃত্যুর পর আমার জমা কৃত সমস্ত টাকা নিম্নলিখিত ব্যক্তিকে প্রদান করার জন্য উত্তরাধিকারী মনোনীত করলাম।"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -424,7 +449,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //21
-                <EditText
+                <Spinner
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:id="@+id/relation"
@@ -442,7 +467,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></Spinner>
                 //22
                 <EditText
                     android:textAlignment="center"
@@ -611,7 +636,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //offic
-                <EditText
+                <Spinner
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:enabled="true"
@@ -631,7 +656,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></Spinner>
                 <EditText
                     android:textAlignment="center"
                     android:id="@+id/namesecond"
@@ -701,7 +726,7 @@
                 <EditText
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:id="@+id/idNumber"
 
 

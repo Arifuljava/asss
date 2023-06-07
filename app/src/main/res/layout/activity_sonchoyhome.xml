@@ -230,6 +230,7 @@
                     <androidx.appcompat.widget.SearchView
 
                         android:layout_margin="@dimen/space_10dp"
+                        android:focusable="true"
                         android:background="@drawable/border"
 
                         app:queryHint="অনুসন্ধানের জন্য নাম লিখুন"

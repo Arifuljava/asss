@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -31,12 +32,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.flatdialoglibrary.dialog.FlatDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -45,6 +48,12 @@ import com.google.firebase.storage.UploadTask;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.kaopiz.kprogresshud.KProgressHUD;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -122,10 +131,27 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
         imagee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), 21);
+                Dexter.withContext(getApplicationContext())
+                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .withListener(new PermissionListener() {
+                            @Override
+                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                                Intent intent = new Intent();
+                                intent.setType("image/*");
+                                intent.setAction(Intent.ACTION_GET_CONTENT);
+                                startActivityForResult(intent, 21);
+                            }
+
+                            @Override
+                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                                permissionToken.continuePermissionRequest();
+                            }
+                        }).check();
             }
         });
         ///cate
@@ -146,6 +172,75 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
                 R.layout.spinner_row, textSizes1);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         p_address.setAdapter(adapter1);
+        ppaddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FlatDialog flatDialog1 = new FlatDialog(AddProducts.this);
+                flatDialog1.setTitle("বিস্তারিত লিখুন")
+                        .setSubtitle("স্টক কমের এলার্ট")
+                        .setFirstTextFieldHint("কত")
+                        .setFirstButtonText("এটি সংরক্ষণ করুন")
+                        .setSecondButtonText("বাতিল করুন")
+                        .withFirstButtonListner(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String tt = flatDialog1.getFirstTextField().toString();
+                                if (TextUtils.isEmpty(tt)
+                                ) {
+
+                                    Toast.makeText(AddProducts.this, "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    flatDialog1.dismiss();
+
+                                    Toast.makeText(AddProducts.this, "সম্পন্ন", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        })
+                        .withSecondButtonListner(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                flatDialog1.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
+        votar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FlatDialog flatDialog1 = new FlatDialog(AddProducts.this);
+                flatDialog1.setTitle("বিস্তারিত লিখুন")
+                        .setSubtitle("ভ্যাট প্রযোজ্য")
+                        .setFirstTextFieldHint("কত")
+                        .setFirstButtonText("এটি সংরক্ষণ করুন")
+                        .setSecondButtonText("বাতিল করুন")
+                        .withFirstButtonListner(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String tt = flatDialog1.getFirstTextField().toString();
+                                if (TextUtils.isEmpty(tt)
+                                ) {
+
+                                    Toast.makeText(AddProducts.this, "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    flatDialog1.dismiss();
+                                    Toast.makeText(AddProducts.this, "সম্পন্ন", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        })
+                        .withSecondButtonListner(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                flatDialog1.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
 
         cirLoginButton11.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -165,7 +260,7 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
                 }
                 if (TextUtils.isEmpty(somitiname.getText().toString())||TextUtils.isEmpty(sovapoti.getText().toString())||
                         TextUtils.isEmpty(sovapoti_english.getText().toString())||TextUtils.isEmpty(fatherba.getText().toString())||
-                TextUtils.isEmpty(fatheren.getText().toString())|| flag==2||TextUtils.isEmpty(valueFromSpinner)||TextUtils.isEmpty(valueFromSpinner1)
+                TextUtils.isEmpty(fatheren.getText().toString())
                 ||TextUtils.isEmpty(natii.getText().toString())||TextUtils.isEmpty(b_date.getText().toString())||TextUtils.isEmpty(s_kisti.getText().toString())||TextUtils.isEmpty(ocupa.getText().toString())
                        ) {
                     Toasty.error(getApplicationContext(),"সমস্ত তথ্য লিখুন",Toasty.LENGTH_SHORT,true).show();
@@ -245,20 +340,8 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        IntentResult intentResult=IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (intentResult.getContents()!=null) {
-            AlertDialog.Builder builder=new AlertDialog.Builder(AddProducts.this);
-            builder.setTitle("Result")
-                    .setMessage(intentResult.getContents())
-                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    }).create();
-            builder.show();
-        }
-        else  if (requestCode == 21 && resultCode == RESULT_OK
+
+          if (requestCode == 21 && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             filePath = data.getData();
             try {
@@ -275,7 +358,23 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
             }
         }
         else {
-            Toasty.error(getApplicationContext(),"Opps...did not find a qr code",Toasty.LENGTH_SHORT,true).show();
+              IntentResult intentResult=IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+              if (intentResult.getContents()!=null) {
+                  AlertDialog.Builder builder=new AlertDialog.Builder(AddProducts.this);
+                  builder.setTitle("Result")
+                          .setMessage(intentResult.getContents())
+                          .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                              @Override
+                              public void onClick(DialogInterface dialog, int which) {
+                                  dialog.dismiss();
+                              }
+                          }).create();
+                  builder.show();
+              }
+              else {
+                  Toasty.error(getApplicationContext(),"Opps...did not find a qr code",Toasty.LENGTH_SHORT,true).show();
+              }
+
 
         }
     }

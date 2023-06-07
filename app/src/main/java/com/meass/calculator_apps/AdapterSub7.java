@@ -74,7 +74,7 @@ public class AdapterSub7 extends RecyclerView.Adapter<AdapterSub7.myview> {
             }
 
         }
-        holder.customer_name.setText(data.get(position).getSovapoti());
+        holder.customer_name.setText("সদস্যর নাম : "+data.get(position).getSovapoti()+"\nসমিতির নাম : "+data.get(position).getSomitiname());
         holder.customer_number.setText("লাস্ট কিস্তি");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         Calendar calendar1 = Calendar.getInstance();
@@ -130,7 +130,8 @@ public class AdapterSub7 extends RecyclerView.Adapter<AdapterSub7.myview> {
                             for (DocumentSnapshot document : task.getResult()) {
                                 ncoun++;
                             }
-                            int baki=40-ncoun;
+                            int baki=66-ncoun;
+                           // int baki=Integer.parseInt(data.get(position).getRefer())-ncoun;
                             holder.bakikisti.setText(""+baki+" টি");
 
                         }
@@ -146,7 +147,7 @@ public class AdapterSub7 extends RecyclerView.Adapter<AdapterSub7.myview> {
         holder.namee.setText(data.get(position).getSovapoti());
         holder.jomafirst.setText(data.get(position).getPayment()+" টাকা");
 
-
+holder.tottt.setText(data.get(position).getRefer()+"টি");
 
 
 
@@ -163,7 +164,7 @@ public class AdapterSub7 extends RecyclerView.Adapter<AdapterSub7.myview> {
         CardView card_view8;
         ImageView profile_image;
         LinearLayout idsecondlayout,firstlay;
-        Button dailyCheckCard,taskCard6,bakikisti,datetarik,addkisti,namee,jomafirst;
+        Button dailyCheckCard,taskCard6,bakikisti,datetarik,addkisti,namee,jomafirst,tottt;
         public myview(@NonNull View itemView) {
             super(itemView);
             jomafirst=itemView.findViewById(R.id.jomafirst);
@@ -180,6 +181,8 @@ public class AdapterSub7 extends RecyclerView.Adapter<AdapterSub7.myview> {
             taskCard6=itemView.findViewById(R.id.taskCard6);
             datetarik=itemView.findViewById(R.id.datetarik);
             addkisti=itemView.findViewById(R.id.addkisti);
+            tottt=itemView.findViewById(R.id.tottt);
+
         }
     }
 }

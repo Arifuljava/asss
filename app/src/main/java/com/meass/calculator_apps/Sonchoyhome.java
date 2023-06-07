@@ -124,6 +124,7 @@ public class Sonchoyhome extends AppCompatActivity {
         reciveData();
         //searching
         name=findViewById(R.id.serachname);
+        name.setIconified(false);
         name.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -161,6 +162,7 @@ public class Sonchoyhome extends AppCompatActivity {
     }
 
     public void add(View view) {
+      /*
         String list []= {"নতুন যোগ করুন","তালিকা দেখুন"};
         AlertDialog.Builder builder=new AlertDialog.Builder(Sonchoyhome.this);
         builder.setTitle("একটা নির্বাচন করুন")
@@ -171,14 +173,16 @@ public class Sonchoyhome extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),Add_Somiti.class));
                         }
                         else {
-                            Intent intent=new Intent(getApplicationContext(),SomotiListAllActivity.class);
-                            intent.putExtra("detecor","1");
-                            intent.putExtra("gettingtext","কর্ম নির্বাচন করুন ");
-                           startActivity(intent);
+
                         }
                     }
                 }).create();
         builder.show();
+       */
+        Intent intent=new Intent(getApplicationContext(),SomotiListAllActivity.class);
+        intent.putExtra("detecor","1");
+        intent.putExtra("gettingtext","কর্ম নির্বাচন করুন ");
+        startActivity(intent);
 
     }
     String detecor,gettingtext;

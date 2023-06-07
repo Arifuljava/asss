@@ -17,7 +17,10 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -33,6 +36,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -46,9 +50,11 @@ import java.util.UUID;
 
 import es.dmoral.toasty.Toasty;
 
-public class Add_member extends AppCompatActivity {
+public class Add_member extends AppCompatActivity implements   AdapterView.OnItemSelectedListener{
     String mm;
-
+Spinner relation,namefirst,natii,relagi,kisticategory;
+    String valueFromSpinner;
+    String valueFromSpinner1;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +83,48 @@ public class Add_member extends AppCompatActivity {
         getSupportActionBar().setElevation(10.0f);
         getSupportActionBar().setElevation(10.0f);
         getSupportActionBar().setElevation(10.0f);
+        relation=findViewById(R.id.relation);
+        namefirst=findViewById(R.id.namefirst);
+        namefirst.setOnItemSelectedListener(this);
 
+        String[] textSizes = getResources().getStringArray(R.array.namefirst);
+        ArrayAdapter adapter = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        namefirst.setAdapter(adapter);
+
+        //
+        relation.setOnItemSelectedListener(this);
+
+        String[] textSizes1 = getResources().getStringArray(R.array.relational);
+        ArrayAdapter adapte1r = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes1);
+        adapte1r.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        relation.setAdapter(adapte1r);
+        //nation
+        natii=findViewById(R.id.natii);
+        natii.setOnItemSelectedListener(this);
+        String[] textSizes11 = getResources().getStringArray(R.array.nattui);
+        ArrayAdapter adapte11r = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes11);
+        adapte11r.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        natii.setAdapter(adapte11r);
+        //reli
+        relagi=findViewById(R.id.relagi);
+        relagi.setOnItemSelectedListener(this);
+        String[] textSizes1122 = getResources().getStringArray(R.array.dhormo);
+        ArrayAdapter adapte11r22 = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes1122);
+        adapte11r22.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        relagi.setAdapter(adapte11r22);
+        ///category
+        kisticategory=findViewById(R.id.kisticategory);
+        kisticategory.setOnItemSelectedListener(this);
+        String[] textSizes112kisticategory2 = getResources().getStringArray(R.array.kisti);
+        ArrayAdapter adapte11kisticategoryr22 = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes112kisticategory2);
+        adapte11kisticategoryr22.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        kisticategory.setAdapter(adapte11kisticategoryr22);
         //edittext
         somitiname=findViewById(R.id.somitiname);
         somitiname.setText(""+mm);
@@ -89,7 +136,6 @@ public class Add_member extends AppCompatActivity {
         p_address=findViewById(R.id.p_address);
         ppaddress=findViewById(R.id.ppaddress);
         votar=findViewById(R.id.votar);
-        natii=findViewById(R.id.natii);
         b_date=findViewById(R.id.b_date);
         s_kisti=findViewById(R.id.s_kisti);
         ocupa=findViewById(R.id.ocupa);
@@ -101,7 +147,7 @@ public class Add_member extends AppCompatActivity {
         firebaseAuth= FirebaseAuth.getInstance();
         firebaseFirestore= FirebaseFirestore.getInstance();
         s_name=findViewById(R.id.s_name);
-        relation=findViewById(R.id.relation);
+
         s_paddress=findViewById(R.id.s_paddress);
         s_ppaer=findViewById(R.id.s_ppaer);
         datee=findViewById(R.id.datee);
@@ -109,7 +155,7 @@ public class Add_member extends AppCompatActivity {
         porichoy=findViewById(R.id.porichoy);
         userimage=findViewById(R.id.userimage);
         //edit
-        namefirst=findViewById(R.id.namefirst);
+
         namesecond=findViewById(R.id.namesecond);
         onomoshonsig=findViewById(R.id.onomoshonsig);
         date2=findViewById(R.id.date2);
@@ -139,53 +185,77 @@ public class Add_member extends AppCompatActivity {
         final int min1 = 3000;
         final int max1 = 500000;
         final int random = new Random().nextInt((max - min) + 1) + min;
-        idNumber.setText(""+random);
-        namefirst.addTextChangedListener(textWatcher);
+
+     //   namefirst.addTextChangedListener(textWatcher);
         somitiname.addTextChangedListener(somitiwatcher);
+        //counter
+        firebaseFirestore.collection("SomitiMember")
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .collection("List")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int ncount=0;
+                            for (DocumentSnapshot document : task.getResult()) {
+                                ncount++;
+                            }
+                            int third = ncount+1;
+                            idNumber.setText(""+third);
+                        }
+                    }
+                });
 
         cirLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (TextUtils.isEmpty(somitiname.getText().toString())||TextUtils.isEmpty(sovapoti.getText().toString())||TextUtils.isEmpty(signeture.getText().toString())||TextUtils.isEmpty(pasword.getText().toString())||TextUtils.isEmpty(refer.getText().toString())||
-                        TextUtils.isEmpty(ocupa.getText().toString())||TextUtils.isEmpty(s_kisti.getText().toString())||TextUtils.isEmpty(b_date.getText().toString())||TextUtils.isEmpty(natii.getText().toString())||TextUtils.isEmpty(votar.getText().toString())||
+                        TextUtils.isEmpty(ocupa.getText().toString())||TextUtils.isEmpty(s_kisti.getText().toString())||TextUtils.isEmpty(b_date.getText().toString())||TextUtils.isEmpty(votar.getText().toString())||
                         TextUtils.isEmpty(ppaddress.getText().toString())||TextUtils.isEmpty(p_address.getText().toString())||TextUtils.isEmpty(mother.getText().toString())||TextUtils.isEmpty(fatheren.getText().toString())||TextUtils.isEmpty(fatherba.getText().toString())||
-                        TextUtils.isEmpty(sovapoti_english.getText().toString())||TextUtils.isEmpty(s_name.getText().toString())||TextUtils.isEmpty(relagi.getText().toString())||TextUtils.isEmpty(porichoy.getText().toString())||TextUtils.isEmpty(mysigne.getText().toString())||
-                        TextUtils.isEmpty(datee.getText().toString())||TextUtils.isEmpty(s_ppaer.getText().toString())||TextUtils.isEmpty(s_paddress.getText().toString())||TextUtils.isEmpty(relation.getText().toString())||TextUtils.isEmpty(namefirst.getText().toString())||
+                        TextUtils.isEmpty(sovapoti_english.getText().toString())||TextUtils.isEmpty(s_name.getText().toString())||TextUtils.isEmpty(porichoy.getText().toString())||TextUtils.isEmpty(mysigne.getText().toString())||
+                        TextUtils.isEmpty(datee.getText().toString())||TextUtils.isEmpty(s_ppaer.getText().toString())||TextUtils.isEmpty(s_paddress.getText().toString())||
                         TextUtils.isEmpty(namesecond.getText().toString())||TextUtils.isEmpty(onomoshonsig.getText().toString())||TextUtils.isEmpty(date2.getText().toString())||TextUtils.isEmpty(idNumber.getText().toString())||TextUtils.isEmpty(takakka.getText().toString())||TextUtils.isEmpty(grohonsa.getText().toString())) {
 
                     Toasty.error(getApplicationContext(),"সমস্ত তথ্য লিখুন",Toasty.LENGTH_SHORT,true).show();
                     return;
                 }
                 else {
-                    if (flag==1) {
-                        Toasty.warning(getApplicationContext(),"ব্যবহারকারীর ছবি নির্বাচন করুন",Toasty.LENGTH_SHORT,true).show();
-
-                        return;
-
+                    if (!sikar.isChecked()) {
+                        Toasty.warning(getApplicationContext(),"নিশ্চিতকরণ বিভাগ চেক করুন",Toasty.LENGTH_SHORT,true).show();
                     }
                     else {
-                        firebaseFirestore.collection("SomitiMember")
-                                .document(firebaseAuth.getCurrentUser().getEmail())
-                                .collection("List")
-                                .document(sovapoti_english.getText().toString().toLowerCase())
-                                .get()
-                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                        if (task.isSuccessful()) {
-                                            if (task.getResult().exists()) {
-                                                Toasty.error(getApplicationContext(),"এই সদস্যটি ইতিমধ্যে বিদ্যমান। সদস্য নামের জন্য অন্য একটি নাম দিন",Toasty.LENGTH_SHORT,true).show();
-                                                return;
-                                            }
-                                            else {
-                                                uploadImage();
+                        if (flag==1) {
+                            Toasty.warning(getApplicationContext(),"ব্যবহারকারীর ছবি নির্বাচন করুন",Toasty.LENGTH_SHORT,true).show();
+
+                            return;
+
+                        }
+                        else {
+                            firebaseFirestore.collection("SomitiMember")
+                                    .document(firebaseAuth.getCurrentUser().getEmail())
+                                    .collection("List")
+                                    .document(sovapoti_english.getText().toString().toLowerCase())
+                                    .get()
+                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                if (task.getResult().exists()) {
+                                                    Toasty.error(getApplicationContext(),"এই সদস্যটি ইতিমধ্যে বিদ্যমান। সদস্য নামের জন্য অন্য একটি নাম দিন",Toasty.LENGTH_SHORT,true).show();
+                                                    return;
+                                                }
+                                                else {
+                                                    uploadImage();
+                                                }
                                             }
                                         }
-                                    }
-                                });
+                                    });
 
+                        }
                     }
+
                 }
 
             }
@@ -268,7 +338,7 @@ else {
 }
         }
     };
-    EditText namefirst,namesecond,onomoshonsig,date2,idNumber,takakka,grohonsa;
+    EditText namesecond,onomoshonsig,date2,idNumber,takakka,grohonsa;
     FirebaseUser firebaseUser;
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -290,11 +360,11 @@ else {
             }
         }
     }
+    CheckBox sikar;
     int flag=1;
     private Spinner spinnerTextSize,spinnerTextSize1,spinnerTextSize2;
     EditText Email_Log;
-    String valueFromSpinner;
-    String valueFromSpinner1;
+
     String valueFromSpinner2;
     EditText Email_Log4;
 
@@ -316,12 +386,12 @@ else {
 
     private Uri mainImageUri = null;
     ImageView userimage;
-    EditText s_name,relagi,porichoy,mysigne,datee,s_ppaer,s_paddress,relation;
+    EditText s_name,porichoy,mysigne,datee,s_ppaer,s_paddress;
     Button cirLoginButton;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     EditText somitiname,sovapoti,signeture,pasword,refer,ocupa,s_kisti,
-            b_date,natii,votar,ppaddress,p_address,mother,fatheren,
+            b_date,votar,ppaddress,p_address,mother,fatheren,
             fatherba,sovapoti_english;
     @Override
     public void onBackPressed() {
@@ -364,8 +434,8 @@ else {
                                 Long tsLong = System.currentTimeMillis()/1000;
                                 String  ts = tsLong.toString();
                                 AddmemberModel addSomitimodel=new AddmemberModel(somitiname.getText().toString(),sovapoti.getText().toString(),signeture.getText().toString(),pasword.getText().toString(),refer.getText().toString(),ocupa.getText().toString(),s_kisti.getText().toString(),
-                                        b_date.getText().toString(),natii.getText().toString(),votar.getText().toString(),ppaddress.getText().toString(),p_address.getText().toString(),mother.getText().toString(),fatheren.getText().toString(),
-                                        fatherba.getText().toString(),sovapoti_english.getText().toString(),""+today,s_name.getText().toString(),relation.getText().toString(),s_paddress.getText().toString(),s_ppaer.getText().toString(),takakka.getText().toString(),idNumber.getText().toString(),downloadUri.toString(),firebaseAuth.getCurrentUser().getEmail(),firebaseAuth.getCurrentUser().getUid(),ts);
+                                        b_date.getText().toString(),uui,votar.getText().toString(),ppaddress.getText().toString(),p_address.getText().toString(),mother.getText().toString(),fatheren.getText().toString(),
+                                        fatherba.getText().toString(),sovapoti_english.getText().toString(),""+today,s_name.getText().toString(),"relation.getText().toString()",s_paddress.getText().toString(),s_ppaer.getText().toString(),takakka.getText().toString(),idNumber.getText().toString(),downloadUri.toString(),firebaseAuth.getCurrentUser().getEmail(),firebaseAuth.getCurrentUser().getUid(),ts);
                                 firebaseFirestore.collection("SomitiMember")
                                         .document(firebaseAuth.getCurrentUser().getEmail())
                                         .collection("List")
@@ -416,8 +486,8 @@ else {
             Long tsLong = System.currentTimeMillis()/1000;
             String  ts = tsLong.toString();
             AddmemberModel addSomitimodel=new AddmemberModel(somitiname.getText().toString(),sovapoti.getText().toString(),signeture.getText().toString(),pasword.getText().toString(),refer.getText().toString(),ocupa.getText().toString(),s_kisti.getText().toString(),
-                    b_date.getText().toString(),natii.getText().toString(),votar.getText().toString(),ppaddress.getText().toString(),p_address.getText().toString(),mother.getText().toString(),fatheren.getText().toString(),
-                    fatherba.getText().toString(),sovapoti_english.getText().toString(),""+today,s_name.getText().toString(),relation.getText().toString(),s_paddress.getText().toString(),s_ppaer.getText().toString(),takakka.getText().toString(),idNumber.getText().toString(),image.toString(),firebaseAuth.getCurrentUser().getEmail(),firebaseAuth.getCurrentUser().getUid(),ts);
+                    b_date.getText().toString(),uui,votar.getText().toString(),ppaddress.getText().toString(),p_address.getText().toString(),mother.getText().toString(),fatheren.getText().toString(),
+                    fatherba.getText().toString(),sovapoti_english.getText().toString(),""+today,s_name.getText().toString(),"relation.getText().toString()",s_paddress.getText().toString(),s_ppaer.getText().toString(),takakka.getText().toString(),idNumber.getText().toString(),image.toString(),firebaseAuth.getCurrentUser().getEmail(),firebaseAuth.getCurrentUser().getUid(),ts);
             firebaseFirestore.collection("SomitiMember")
                     .document(firebaseAuth.getCurrentUser().getEmail())
                     .collection("List")
@@ -435,5 +505,23 @@ else {
                         }
                     });
         }
+    }
+String uui;
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getId() == R.id.namefirst) {
+            valueFromSpinner = parent.getItemAtPosition(position).toString();
+            namesecond.setText(valueFromSpinner+" কে " +
+                    "আত্র সমিতির সদস্যপদ দেওয়ার জন্য আনুমতি " +
+                    "প্রদান করা হল।");
+        }
+        if ((parent.getId()==R.id.kisticategory)) {
+            uui= parent.getItemAtPosition(position).toString();
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

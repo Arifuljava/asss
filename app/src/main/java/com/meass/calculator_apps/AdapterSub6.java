@@ -76,7 +76,7 @@ public class AdapterSub6 extends RecyclerView.Adapter<AdapterSub6.myview> {
             }
 
         }
-        holder.customer_name.setText(data.get(position).getSovapoti());
+        holder.customer_name.setText("সদস্যর নাম : "+data.get(position).getSovapoti()+"\nসমিতির নাম : "+data.get(position).getSomitiname());
         holder.customer_number.setText("লাস্ট কিস্তি");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         Calendar calendar1 = Calendar.getInstance();
@@ -140,13 +140,127 @@ public class AdapterSub6 extends RecyclerView.Adapter<AdapterSub6.myview> {
         holder.dailyCheckCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
+                builder.setTitle("নিশ্চিতকরণ")
+                        .setMessage("আপনি কি আপনার সোমিতিতে এই কিস্তি জমা দিতে চান?")
+                        .setPositiveButton("না", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).setNegativeButton("হ্যাঁ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        final KProgressHUD progressDialog=  KProgressHUD.create(v.getContext())
+                                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                                .setLabel("এই কিস্তি যোগ করা হয়েছে .....")
+                                .setCancellable(false)
+                                .setAnimationSpeed(2)
+                                .setDimAmount(0.5f)
+                                .show();
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("first", "Ada");
 
+                        firebaseFirestore.collection("KistiList")
+                                .document(firebaseAuth.getCurrentUser().getEmail())
+                                .collection("List")
+                                .document(data.get(position).getSovapoti_english().toString().toLowerCase())
+                                .collection("List")
+                                .document(data.get(position).getDate())
+                                .set(user)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()) {
+                                            String date=data.get(position).getDate();
+                                            LocalDate today = LocalDate.parse(date);
+                                            LocalDate oneMonthLater = today.plusDays( 7 );
+                                            firebaseFirestore.collection("SomitiMember")
+                                                    .document(firebaseAuth.getCurrentUser().getEmail())
+                                                    .collection("List")
+                                                    .document(data.get(position).getSovapoti_english().toString().toLowerCase())
+                                                    .update("date",""+oneMonthLater)
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()) {
+                                                                progressDialog.dismiss();
+                                                                Toasty.success(v.getContext(),"সম্পন্ন হয়েছে",Toasty.LENGTH_SHORT,true).show();
+                                                                return;
+                                                            }
+                                                        }
+                                                    });
+
+                                        }
+                                    }
+                                });
+
+                    }
+                }).create().show();
             }
         });
         holder.dailyCheckCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
+                builder.setTitle("নিশ্চিতকরণ")
+                        .setMessage("আপনি কি আপনার সোমিতিতে এই কিস্তি জমা দিতে চান?")
+                        .setPositiveButton("না", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).setNegativeButton("হ্যাঁ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        final KProgressHUD progressDialog=  KProgressHUD.create(v.getContext())
+                                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                                .setLabel("এই কিস্তি যোগ করা হয়েছে .....")
+                                .setCancellable(false)
+                                .setAnimationSpeed(2)
+                                .setDimAmount(0.5f)
+                                .show();
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("first", "Ada");
 
+                        firebaseFirestore.collection("KistiList")
+                                .document(firebaseAuth.getCurrentUser().getEmail())
+                                .collection("List")
+                                .document(data.get(position).getSovapoti_english().toString().toLowerCase())
+                                .collection("List")
+                                .document(data.get(position).getDate())
+                                .set(user)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()) {
+                                            String date=data.get(position).getDate();
+                                            LocalDate today = LocalDate.parse(date);
+                                            LocalDate oneMonthLater = today.plusDays( 7 );
+                                            firebaseFirestore.collection("SomitiMember")
+                                                    .document(firebaseAuth.getCurrentUser().getEmail())
+                                                    .collection("List")
+                                                    .document(data.get(position).getSovapoti_english().toString().toLowerCase())
+                                                    .update("date",""+oneMonthLater)
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()) {
+                                                                progressDialog.dismiss();
+                                                                Toasty.success(v.getContext(),"সম্পন্ন হয়েছে",Toasty.LENGTH_SHORT,true).show();
+                                                                return;
+                                                            }
+                                                        }
+                                                    });
+
+                                        }
+                                    }
+                                });
+
+                    }
+                }).create().show();
             }
         });
         String date=data.get(position).getDate();

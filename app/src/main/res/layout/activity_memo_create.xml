@@ -111,7 +111,7 @@
                     android:minHeight="50dp"
                     ></EditText>
                 //5
-                <EditText
+                <AutoCompleteTextView
                     android:textAlignment="center"
                     android:id="@+id/fatheren"
                     android:layout_marginTop="10dp"
@@ -127,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    ></AutoCompleteTextView>
                 //6
                 <EditText
                     android:textAlignment="center"
@@ -139,7 +139,7 @@
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
                     android:textSize="15dp"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/space_20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 <EditText
                     android:textAlignment="center"
                     android:id="@+id/ektir"
-                    android:enabled="false"
+
                     android:layout_marginTop="10dp"
 
 
@@ -175,7 +175,7 @@
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
                     android:textSize="15dp"
-                    android:inputType="textMultiLine"
+                    android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/space_20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -189,7 +189,7 @@
 
 
                     android:hint="মোট মূল্য"
-                    android:enabled="false"
+
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -230,13 +230,13 @@
 
 
                     android:hint="কমিশন মূল্য"
-                    android:enabled="false"
+
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
                     android:textSize="15dp"
 
-                    android:inputType="datetime"
+                    android:inputType="numberDecimal"
                     android:layout_marginRight="@dimen/space_20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -267,7 +267,7 @@
                     android:textAlignment="center"
                     android:id="@+id/ocupa"
                     android:layout_marginTop="10dp"
-                    android:enabled="false"
+
 
 
 

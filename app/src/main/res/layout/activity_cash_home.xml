@@ -231,6 +231,7 @@
                         <Button
 
                             android:layout_width="0dp"
+                            android:onClick="addchalan"
 
                             android:layout_height="50dp"
                             android:background="@drawable/jje"
@@ -410,6 +411,7 @@
                             <Button
 
                                 android:layout_width="0dp"
+                                android:id="@+id/todaycash"
 
                                 android:layout_height="100dp"
                                 android:background="@drawable/jje"
@@ -429,6 +431,7 @@
 
 
                                 android:layout_width="0dp"
+                                android:id="@+id/previousbalance"
                                 android:background="@drawable/jje"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"
@@ -447,6 +450,7 @@
 
 
                                 android:layout_width="0dp"
+                                android:id="@+id/intotalll"
                                 android:background="@drawable/jje"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"
@@ -506,6 +510,7 @@
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
                                 android:text="0 টাকা"
+                                android:id="@+id/totalbaki"
                                 android:textColor="@color/white"
 
                                 android:foreground="?attr/selectableItemBackground"
@@ -558,6 +563,7 @@
 
 
                                 android:layout_width="0dp"
+                                android:id="@+id/more"
                                 android:background="@drawable/kk"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"

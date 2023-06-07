@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -184,5 +185,13 @@ public class SomotiListAllActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void newview(View view) {
+        Toast.makeText(this, "এই তালিকা", Toast.LENGTH_SHORT).show();
+    }
+
+    public void addnote(View view) {
+        startActivity(new Intent(getApplicationContext(),Add_Somiti.class));
     }
 }

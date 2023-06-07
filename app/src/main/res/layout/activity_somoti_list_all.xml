@@ -44,6 +44,74 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 >
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:visibility="visible"
+
+                            android:layout_width="0dp"
+
+                            android:layout_height="50dp"
+                            android:background="@drawable/allbus"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="নতুন যোগ করুন"
+                            android:onClick="addnote"
+
+                            android:textColor="@color/white"
+                            >
+
+
+
+                        </Button>
+                        <Button
+
+                            android:layout_width="0dp"
+                            android:visibility="invisible"
+
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+                        <Button
+                            android:id="@+id/taskCard61"
+                            android:onClick="newview"
+
+                            android:layout_width="0dp"
+                            android:background="@drawable/ww"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="তালিকা"
+                            android:textColor="@color/white"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            >
+
+
+
+                        </Button>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
                 <androidx.appcompat.widget.SearchView
 
                     android:layout_margin="@dimen/space_10dp"

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="kisti"
+        >
+        <item>দৈনিক</item>
+        <item>সাপ্তাহিক</item>
+        <item>মাসিক</item>
+        <item>অর্ধ বার্ষিক</item>
+        <item>বার্ষিক</item>
+    </string-array>
+    <string-array name="dhormo">
+        <item>মুসলিম</item>
+        <item>হিন্দু</item>
+        <item>বৌদ্ধ</item>
+        <item>খ্রিস্টান</item>
+    </string-array>
+    <string-array name="nattui">
+        <item>বাংলাদেশ</item>
+        <item>ভারত</item>
+        <item>থাইল্যান্ড</item>
+        <item>আমেরিকা</item>
+        <item>মালয়েশিয়া</item>
+    </string-array>
+    <string-array name="namefirst">
+        <item>মিস্টার</item>
+        <item>মিস</item>
+        <item>মিসেস</item>
+    </string-array>
+    <string-array name="relational">
+        <item>মা</item>
+        <item>পিতা</item>
+        <item>ভাই</item>
+        <item>বোন</item>
+        <item>স্ত্রী</item>
+        <item>পুত্র</item>
+        <item>কন্যা</item>
+    </string-array>
     <string-array name="wight"
         >
         <item>Gram</item>

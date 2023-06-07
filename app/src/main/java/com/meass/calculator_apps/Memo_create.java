@@ -14,23 +14,35 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import es.dmoral.toasty.Toasty;
 
 public class Memo_create extends AppCompatActivity {
+    AutoCompleteTextView fatheren;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +69,34 @@ public class Memo_create extends AppCompatActivity {
         //fire
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
+        fatheren=findViewById(R.id.fatheren);
+        firebaseFirestore.collection("Personal")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<String> names = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String name = document.getString("name");
+                                names.add(name);
+                            }
+
+                            // Create an ArrayAdapter and set it to the AutoCompleteTextView
+                            ArrayAdapter<String> adapter = new ArrayAdapter<>(Memo_create.this,
+                                    android.R.layout.simple_dropdown_item_1line, names);
+                            fatheren.setAdapter(adapter);
+                        } else {
+                            Log.d("Firestore", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
         //edittext
         somitiname=findViewById(R.id.somitiname);
         sovapoti=findViewById(R.id.sovapoti);
         sovapoti_english=findViewById(R.id.sovapoti_english);
         fatherba=findViewById(R.id.fatherba);
-        fatheren=findViewById(R.id.fatheren);
+
         mother=findViewById(R.id.mother);
         p_address=findViewById(R.id.p_address);
         ektir=findViewById(R.id.ektir);
@@ -80,6 +114,7 @@ public class Memo_create extends AppCompatActivity {
         //textwatcher
         fatherba.addTextChangedListener(textproducts);
         p_address.addTextChangedListener(textpricee);
+        ektir.addTextChangedListener(textpricee1);
         natii.addTextChangedListener(commission);
         s_kisti.addTextChangedListener(finaltextt);
         //clickable
@@ -190,6 +225,17 @@ public class Memo_create extends AppCompatActivity {
                                                                 .setAnimationSpeed(2)
                                                                 .setDimAmount(0.5f)
                                                                 .show();
+                                                        Map<String, Object> user = new HashMap<>();
+                                                        user.put("name", ""+fatheren.getText().toString());
+
+                                                        firebaseFirestore.collection("Personal")
+                                                                .add(user)
+                                                                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<DocumentReference> task) {
+
+                                                                    }
+                                                                });
                                                         MemoProductsModel memoProductsModel=new MemoProductsModel(somitiname.getText().toString(),
                                                                 sovapoti.getText().toString(),sovapoti_english.getText().toString(),fatherba.getText().toString(),
                                                                 fatheren.getText().toString(),mother.getText().toString(),p_address.getText().toString(),
@@ -293,12 +339,18 @@ else {
         public void afterTextChanged(Editable s) {
 commi=s.toString();
 if (TextUtils.isEmpty(commi)) {
+    b_date.setText("");
 }
 else {
-    String dd=votar.getText().toString();
-    double dddd=(Double.parseDouble(dd)*Double.parseDouble(commi))/100;
-    mainvalue=Double.parseDouble(dd)-dddd;
-    b_date.setText(""+dddd);
+ if (TextUtils.isEmpty(votar.getText().toString())) {
+     b_date.setText("");
+ }
+ else {
+     String dd=votar.getText().toString();
+     double dddd=(Double.parseDouble(dd)*Double.parseDouble(commi))/100;
+     mainvalue=Double.parseDouble(dd)-dddd;
+     b_date.setText(""+dddd);
+ }
 }
         }
     };
@@ -318,13 +370,45 @@ else {
         public void afterTextChanged(Editable s) {
 chekrate=s.toString();
 if(TextUtils.isEmpty(chekrate)) {
-
+    votar.setText("");
 }
 else {
-    String dd=ektir.getText().toString();
-    double dddd=Double.parseDouble(dd)*Double.parseDouble(chekrate);
-    votar.setText(""+dddd);
+   if (TextUtils.isEmpty(ektir.getText().toString())) {
+       votar.setText("");
+   }
+   else {
+       double ddd = Double.parseDouble(ektir.getText().toString())*Double.parseDouble(p_address.getText().toString());
+       votar.setText(""+ddd);
+   }
 }
+        }
+    };
+    TextWatcher textpricee1=new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            chekrate=s.toString();
+            if(TextUtils.isEmpty(chekrate)) {
+                votar.setText("");
+            }
+            else {
+                if (TextUtils.isEmpty(p_address.getText().toString())) {
+                    votar.setText("");
+                }
+                else {
+                    double ddd = Double.parseDouble(ektir.getText().toString())*Double.parseDouble(p_address.getText().toString());
+                    votar.setText(""+ddd);
+                }
+            }
         }
     };
     String check;
@@ -358,7 +442,7 @@ else {
                             fatherba.setError("আপনার তালিকায় পণ্যটি বিদ্যমান");
                             dailyCheckCard.setEnabled(true);
                             taskCard6.setEnabled(true);
-                            cirLoginButton.setEnabled(true);
+                          //  cirLoginButton.setEnabled(true);
                             taskCard61.setEnabled(true);
                             ektir.setText(task.getResult().getString("sellprice"));
                         }
@@ -366,7 +450,7 @@ else {
                             fatherba.setError("আপনার তালিকায় পণ্যটি বিদ্যমান নয়");
                             dailyCheckCard.setEnabled(false);
                             taskCard6.setEnabled(false);
-                            cirLoginButton.setEnabled(false);
+                        //    cirLoginButton.setEnabled(false);
                             taskCard61.setEnabled(false);
                         }
                     }
@@ -376,7 +460,7 @@ else {
         }
     };
     Button dailyCheckCard,taskCard6,cirLoginButton,taskCard61;
-    EditText somitiname,sovapoti,sovapoti_english,fatherba,fatheren,mother,p_address
+    EditText somitiname,sovapoti,sovapoti_english,fatherba,mother,p_address
             ,ektir,votar,natii,b_date,s_kisti,refer;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;

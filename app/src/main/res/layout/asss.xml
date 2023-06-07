@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#fff"
+    android:id="@+id/firstlay"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="@dimen/space_5dp"
+    android:layout_marginTop="@dimen/space_5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view8"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:cardBackgroundColor="#44546a"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="10dp"
+
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                >
+                <ImageView
+                    android:id="@+id/image"
+
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/dollar"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="@dimen/space_5dp"
+                    ></ImageView>
+                <RelativeLayout
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/image"
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/customer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginLeft="@dimen/space_10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="সাবেক : "
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"></TextView>
+
+                    <TextView
+
+                        android:layout_below="@+id/customer_name"
+                        android:id="@+id/customer_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+android:textStyle="bold"
+
+                        android:layout_marginLeft="@dimen/space_10dp"
+                        android:text="আজকের বাকি : "
+                        android:textColor="@color/white"
+                        android:textSize="15dp"></TextView>
+
+
+                    <TextView
+                        android:id="@+id/logout"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="@dimen/space_20dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="gone"
+
+                        android:text="  কর্ম নির্বাচন করুন "
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"></TextView>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/idsecondlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/dailyCheckCard"
+                android:layout_width="0dp"
+
+                android:layout_height="50dp"
+                android:background="@drawable/allbus"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:text="কিস্তি"
+
+                android:textColor="@color/white"
+                >
+
+
+
+            </Button>
+            <Button
+                android:id="@+id/taskCard"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+
+                android:layout_height="50dp"
+                android:layout_weight="1"
+
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+
+
+            </Button>
+            <Button
+                android:id="@+id/taskCard6"
+
+                android:layout_width="0dp"
+                android:background="@drawable/allbus"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="টাকা"
+                android:textColor="@color/white"
+
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+
+
+            </Button>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+
+                android:layout_width="0dp"
+                android:onClick="add_balance"
+                android:layout_height="30dp"
+                android:background="@drawable/blackbus"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:text="বাকি কিস্তি"
+
+                android:textColor="@color/white"
+                >
+
+
+
+            </Button>
+            <Button
+                android:layout_marginLeft="20dp"
+                android:id="@+id/bakikisti"
+                android:layout_width="0dp"
+                android:visibility="visible"
+                android:background="@drawable/blackbus"
+                android:layout_height="30dp"
+                android:textColor="@color/white"
+                android:text="২টি"
+                android:layout_weight="1"
+
+                android:foreground="?attr/selectableItemBackground"
+                >
+
+
+
+            </Button>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+
+                android:layout_width="0dp"
+                android:onClick="add_balance"
+                android:layout_height="30dp"
+                android:background="@drawable/blackbus"
+                android:layout_weight="1"
+
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:id="@+id/datetarik"
+                android:text="১০/৩/২০২২ – ২০/০৩/২০২২"
+
+                android:textColor="#ECEC2E"
+                >
+
+
+
+            </Button>
+        </LinearLayout>
+        //
+        <LinearLayout
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:visibility="invisible"
+
+                android:layout_width="0dp"
+                android:onClick="add_balance"
+                android:layout_height="50dp"
+                android:background="@drawable/blackbus"
+                android:layout_weight="1"
+
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:text="১০/৩/২০২২ – ২০/০৩/২০২২"
+
+                android:textColor="#ECEC2E"
+                >
+
+
+
+            </Button>
+            <Button
+
+                android:layout_width="0dp"
+               android:id="@+id/addkisti"
+                android:layout_height="50dp"
+
+                android:background="@drawable/kk"
+                android:layout_weight="1"
+
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:text="কিস্তি গ্রহণ করুন"
+
+                android:textColor="#fff"
+                >
+
+
+
+            </Button>
+            <Button
+                android:visibility="invisible"
+
+                android:layout_width="0dp"
+                android:onClick="add_balance"
+                android:layout_height="50dp"
+                android:background="@drawable/blackbus"
+                android:layout_weight="1"
+
+                android:layout_marginRight="10dp"
+                android:clickable="true"
+                android:text="১০/৩/২০২২ – ২০/০৩/২০২২"
+
+                android:textColor="#ECEC2E"
+                >
+
+
+
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

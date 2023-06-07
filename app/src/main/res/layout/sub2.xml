@@ -227,6 +227,7 @@ android:textStyle="bold"
                 android:layout_height="30dp"
                 android:textColor="@color/white"
                 android:text="৪০টি"
+                android:id="@+id/tottt"
                 android:layout_weight="1"
 
                 android:foreground="?attr/selectableItemBackground"

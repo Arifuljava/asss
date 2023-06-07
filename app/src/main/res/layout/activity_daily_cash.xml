@@ -107,6 +107,7 @@
 
                         <Button
                             android:layout_marginLeft="10dp"
+                            android:id="@+id/tarikdetect"
 
 
                             android:layout_width="0dp"
@@ -145,6 +146,7 @@
                         <Button
 
                             android:layout_width="0dp"
+                            android:id="@+id/datess"
 
                             android:layout_height="50dp"
                             android:background="@drawable/jje"
@@ -162,6 +164,7 @@
 
                         <Button
                             android:layout_marginLeft="10dp"
+                            android:id="@+id/cashedit"
 
 
                             android:layout_width="0dp"
@@ -316,6 +319,7 @@
                             android:layout_height="50dp"
                             android:layout_weight="1"
                             android:text="0 টাকা"
+                            android:id="@+id/bakiedit"
                             android:textColor="@color/white"
 
                             android:foreground="?attr/selectableItemBackground"
@@ -355,22 +359,7 @@
 
                         </Button>
                     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    >
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="@dimen/space_10dp"
-        android:layout_marginLeft="@dimen/space_10dp"
 
-        android:layout_width="match_parent"
-        android:id="@+id/rreeeed"
-        android:layout_height="wrap_content"
-        ></androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
                     //9
                     <LinearLayout
                         android:layout_marginTop="20dp"
@@ -398,15 +387,6 @@
 
 
                         </Button>
-                    </LinearLayout>
-                    //10
-                    <LinearLayout
-                        android:layout_marginBottom="150dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="10dp"
-                        >
                         <androidx.recyclerview.widget.RecyclerView
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="@dimen/space_10dp"
@@ -416,6 +396,16 @@
                             android:id="@+id/rreeeed"
                             android:layout_height="wrap_content"
                             ></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                    //10
+                    <LinearLayout
+                        android:layout_marginBottom="150dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        >
+
                     </LinearLayout>
                 </LinearLayout>
 
