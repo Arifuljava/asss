@@ -47,6 +47,7 @@ import javax.annotation.Nullable;
 public class MemoHome extends AppCompatActivity {
 FirebaseFirestore firebaseFirestore;
 FirebaseAuth firebaseAuth;
+TextView appsdownload__3;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -77,6 +78,38 @@ FirebaseAuth firebaseAuth;
         withdrawlisst=findViewById(R.id.withdrawlisst);
         change_password=findViewById(R.id.change_password);
         appsdownload=findViewById(R.id.appsdownload);
+        appsdownload__3=findViewById(R.id.appsdownload__3);
+        /////first
+        firebaseFirestore.collection("ProductsNoteeelist")
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .collection("List")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int ncount=0;
+                            for (DocumentSnapshot document : task.getResult()) {
+                                ncount++;
+                            }
+                            if (ncount==0) {
+                                appsdownload__3.setText("0");
+                            }
+                            else {
+                                double total=0;
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    String stock = document.getString("pices");
+                                    total+=Double.parseDouble(stock);
+                                    appsdownload__3.setText(""+total);
+
+
+                                }
+                            }
+                        }
+                    }
+                });
+
         ///products details
         firebaseFirestore.collection("ProductsList")
                 .document(firebaseAuth.getCurrentUser().getEmail())
@@ -99,7 +132,7 @@ FirebaseAuth firebaseAuth;
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     String stock = document.getString("stock");
                                     String stopdate = document.getString("stopdate");
-                                    total+=Double.parseDouble(stock);
+                                    total+=Double.parseDouble(stock)+Double.parseDouble(appsdownload__3.getText().toString());
                                     deposit__history.setText("টোটাল পণ্য আছে : "+total+" টি");
                                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                                     Calendar calendar1 = Calendar.getInstance();
@@ -109,7 +142,7 @@ FirebaseAuth firebaseAuth;
                                         int seci=0;
                                         ZoneId z = ZoneId.of( "Asia/Dhaka" );
                                         LocalDate today = LocalDate.now( z );
-                                      Date  date1 = dateFormat.parse(stopdate);
+                                        Date  date1 = dateFormat.parse(stopdate);
                                         Date date2 = dateFormat.parse(String.valueOf(today));
                                         long diff = date1.getTime() - date2.getTime();
                                         long diff1 = date2.getTime() - date1.getTime();
@@ -135,19 +168,25 @@ FirebaseAuth firebaseAuth;
                         }
                     }
                 });
+        Calendar calender=Calendar.getInstance();
+        int year = calender.get(Calendar.YEAR);
+        int month = calender.get(Calendar.MONTH)+1;
+        int day = calender.get(Calendar.DATE);
+        String todays = day+""+month+""+year;
+
         ZoneId z = ZoneId.of( "Asia/Dhaka" );
         LocalDate today = LocalDate.now( z );
         firebaseFirestore.collection("ProductsList")
                 .document(firebaseAuth.getCurrentUser().getEmail())
                 .collection("New")
-                .document(""+today)
+                .document(""+todays)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             if (task.getResult().exists()) {
-                                change_password.setText("নতুন পণ্য সংখ্যা : "+task.getResult().getString("stock")+" টি");
+                                change_password.setText("নতুন পণ্য সংখ্যা : "+task.getResult().getString("first")+" টি");
                             }
                             else {
                                 change_password.setText("নতুন পণ্য সংখ্যা : 0"+" টি");

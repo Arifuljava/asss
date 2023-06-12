@@ -60,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
                     ></EditText>
+
                 <EditText
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
@@ -293,6 +294,25 @@
 
 
                     android:hint="বিক্রি দাম"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    ></EditText>
+                <EditText
+                    android:textAlignment="center"
+                    android:id="@+id/dateofxtpired"
+                    android:layout_marginTop="10dp"
+
+
+
+
+                    android:hint="মেয়াদ শেষ হওয়ার তারিখ"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"

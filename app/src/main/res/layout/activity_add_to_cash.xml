@@ -149,9 +149,9 @@
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
                     ></EditText>
-                <EditText
+                <RelativeLayout
                     android:textAlignment="center"
-                    android:id="@+id/p_address"
+
                     android:layout_marginTop="10dp"
 
                     android:hint="নোট করুন কোন খাত হতে ক্যাশ টাকা পেলেন
@@ -165,8 +165,143 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="50dp"
-                    ></EditText>
+                    >
+                    <EditText
+                        android:textAlignment="center"
+                        android:id="@+id/p_address"
+                        android:background="@drawable/siga"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:hint="বাকী"
+
+                        android:layout_marginLeft="25dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        ></EditText>
+                </RelativeLayout>
                 //7
+                //
+                <RelativeLayout
+                    android:textAlignment="center"
+
+                    android:layout_marginTop="10dp"
+
+                    android:hint="নোট করুন কোন খাত হতে ক্যাশ টাকা পেলেন
+যা ব্যাচা কেনা হবে সেটা যোগ বিয়োগ করে এখানে দেখাবে।"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    >
+                    <EditText
+                        android:textAlignment="center"
+                        android:id="@+id/bikkridan"
+                        android:background="@drawable/siga"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:hint="বিক্রির দাম"
+
+                        android:layout_marginLeft="25dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        ></EditText>
+                </RelativeLayout>
+                //
+                <RelativeLayout
+                    android:textAlignment="center"
+
+                    android:layout_marginTop="10dp"
+
+                    android:hint="নোট করুন কোন খাত হতে ক্যাশ টাকা পেলেন
+যা ব্যাচা কেনা হবে সেটা যোগ বিয়োগ করে এখানে দেখাবে।"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    >
+                    <EditText
+                        android:textAlignment="center"
+                        android:id="@+id/kena_dam"
+                        android:background="@drawable/siga"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:hint="কেনা দাম"
+
+                        android:layout_marginLeft="25dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        ></EditText>
+                </RelativeLayout>
+                //
+                <RelativeLayout
+                    android:textAlignment="center"
+
+                    android:layout_marginTop="10dp"
+
+                    android:hint="নোট করুন কোন খাত হতে ক্যাশ টাকা পেলেন
+যা ব্যাচা কেনা হবে সেটা যোগ বিয়োগ করে এখানে দেখাবে।"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginRight="@dimen/space_20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    >
+                    <EditText
+                        android:textAlignment="center"
+                        android:id="@+id/p_address_1"
+                        android:background="@drawable/siga"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:hint="নোট করুন কোন খাত হতে ক্যাশ টাকা পেলেন
+যা ব্যাচা কেনা হবে সেটা যোগ বিয়োগ করে এখানে দেখাবে।"
+
+                        android:layout_marginLeft="25dp"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:inputType="textMultiLine"
+                        android:layout_marginRight="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="50dp"
+                        ></EditText>
+                </RelativeLayout>
 
                 <Button
                     android:minWidth="250dp"
@@ -176,6 +311,20 @@
                     style="@style/loginButton"
 
                     android:text=" যোগ করুন "
+                    android:background="@drawable/gradient_background"
+                    android:layout_marginBottom="20dp"
+                    android:textAllCaps="true"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/loginViewsMargin"/>
+                <Button
+                    android:minWidth="250dp"
+
+
+                    android:id="@+id/personaluser"
+                    style="@style/loginButton"
+
+                    android:text=" ব্যক্তিগত খরচ "
                     android:background="@drawable/gradient_background"
                     android:layout_marginBottom="250dp"
                     android:textAllCaps="true"

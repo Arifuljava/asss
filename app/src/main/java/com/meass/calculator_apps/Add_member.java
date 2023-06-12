@@ -5,7 +5,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -16,6 +20,7 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -45,6 +50,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -55,6 +62,7 @@ public class Add_member extends AppCompatActivity implements   AdapterView.OnIte
 Spinner relation,namefirst,natii,relagi,kisticategory;
     String valueFromSpinner;
     String valueFromSpinner1;
+    int  lastTouchAction = -1;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,20 +186,62 @@ Spinner relation,namefirst,natii,relagi,kisticategory;
 
         ZoneId z = ZoneId.of( "Asia/Dhaka" );
         LocalDate today = LocalDate.now( z );
-      //  datee.setText(""+today);
+      //  date2.setText(""+today);
      //Androidf   date2.setText(""+today);
+        date2.setText(""+today);
         final int min = 111;
         final int max = 999;
         final int min1 = 3000;
         final int max1 = 500000;
         final int random = new Random().nextInt((max - min) + 1) + min;
 
+        p_address.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int flag=0;
+                if(event.getAction() == MotionEvent.ACTION_UP && lastTouchAction == MotionEvent.ACTION_DOWN){
+                    String[] iooi ={"স্থায়ী ঠিকানা থেকে কপি","অন্য স্থান"};
+
+
+                    AlertDialog.Builder builder =new AlertDialog.Builder(Add_member.this);
+                    builder.setItems(iooi, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (which==0) {
+                                 ClipboardManager myClipboard;
+                                 ClipData myClip;
+                                myClipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+                                ppaddress.setText(p_address.getText().toString());
+
+                            }
+                            else {
+                                dialog.dismiss();
+                            }
+
+
+                        }
+                    });
+                    builder.create();
+                    builder.show();
+
+
+
+
+
+
+                }
+                lastTouchAction = event.getAction();
+
+                return false;
+            }
+        });
+
      //   namefirst.addTextChangedListener(textWatcher);
         somitiname.addTextChangedListener(somitiwatcher);
         //counter
-        firebaseFirestore.collection("SomitiMember")
+        firebaseFirestore.collection("MemberCount")
                 .document(firebaseAuth.getCurrentUser().getEmail())
-                .collection("List")
+                .collection(somitiname.getText().toString().toLowerCase().toLowerCase().toString())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -247,6 +297,20 @@ Spinner relation,namefirst,natii,relagi,kisticategory;
                                                     return;
                                                 }
                                                 else {
+                                                    Map<String, Object> user = new HashMap<>();
+                                                    user.put("first", "Ada");
+                                                    firebaseFirestore.collection("MemberCount")
+                                                            .document(firebaseAuth.getCurrentUser().getEmail())
+                                                            .collection(somitiname.getText().toString().toLowerCase().toLowerCase().toString())
+                                                            .document(UUID.randomUUID().toString())
+                                                            .set(user)
+                                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+
+                                                                }
+                                                            });
+
                                                     uploadImage();
                                                 }
                                             }

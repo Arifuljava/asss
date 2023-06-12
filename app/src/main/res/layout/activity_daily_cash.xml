@@ -249,6 +249,7 @@
                         android:background="@drawable/kk"
                         android:layout_weight="1"
                         android:clickable="true"
+                        android:id="@+id/persona"
                         android:text="0 টাকা"
                         android:layout_marginRight="10dp"
 

@@ -371,7 +371,7 @@
 
 
 
-                    android:text="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
+                    android:text="\nআমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত \nসকল তথ্য নির্ভুল ও সত্য।\n"
                     android:enabled="true"
 
                     android:hint="আমি এই মর্মে অঙ্গীকার করতেছি যে উপরের বর্ণিত সকল তথ্য নির্ভুল ও সত্য।"
@@ -416,7 +416,7 @@
 
 
                     android:hint="সদস্যর স্বাক্ষর"
-                    android:text="আমার মৃত্যুর পর আমার জমা কৃত সমস্ত টাকা নিম্নলিখিত ব্যক্তিকে প্রদান করার জন্য উত্তরাধিকারী মনোনীত করলাম।"
+                    android:text="    \n আমার মৃত্যুর পর আমার জমা কৃত সমস্ত টাকা \nনিম্নলিখিত ব্যক্তিকে প্রদান করার \nজন্য উত্তরাধিকারী মনোনীত করলাম।\n"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -517,7 +517,7 @@
 
 
 
-                    android:hint="তারিখ"
+                    android:hint="জন্ম তারিখ"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
@@ -557,7 +557,7 @@
 
 
 
-                    android:hint="দুইজন পরিচচয়দানকারীর
+                    android:hint="দুইজন পরিচচয় দানকারীর
 স্বাক্ষর"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
@@ -579,7 +579,7 @@
 
 
 
-                    android:hint="দুইজন পরিচচয়দানকারীর
+                    android:hint="দুইজন পরিচচয় দানকারীর
 স্বাক্ষর"
                     android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
@@ -603,14 +603,13 @@
 
                     android:hint="দুইজন পরিচচয়দানকারীর
 স্বাক্ষর"
-                    android:background="@drawable/border"
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:inputType="textMultiLine"
                     android:layout_marginRight="@dimen/space_20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:minHeight="100dp"
                     ></ImageView>
                 //office
@@ -662,9 +661,9 @@
                     android:id="@+id/namesecond"
                     android:layout_marginTop="10dp"
                     android:enabled="false"
-                    android:text="........কে
-আত্র সমিতির সদস্যপদ দেওয়ার জন্য আনুমতি
-প্রদান করা হল।"
+                    android:text="    \n........কে
+আত্র সমিতির সদস্যপদ \nদেওয়ার জন্য আনুমতি
+প্রদান করা হল।\n"
 
 
 

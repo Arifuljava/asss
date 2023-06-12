@@ -42,7 +42,7 @@ import es.dmoral.toasty.Toasty;
 public class DailyCash extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
-    Button tarikdetect,datess,bakiedit,cashedit;
+    Button tarikdetect,datess,bakiedit,cashedit,persona;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,7 @@ public class DailyCash extends AppCompatActivity {
         datess=findViewById(R.id.datess);
         bakiedit=findViewById(R.id.bakiedit);
         cashedit=findViewById(R.id.cashedit);
+        persona=findViewById(R.id.persona);
         tarikdetect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +124,7 @@ public class DailyCash extends AppCompatActivity {
                                                  try {
                                                      bakiedit.setText(task.getResult().getString("baki"));
                                                      cashedit.setText(task.getResult().getString("coin"));
+                                                     persona.setText(task.getResult().getString("jomadaily"));
 
                                                      firebaseAuth= FirebaseAuth.getInstance();
                                                      firebaseFirestore= FirebaseFirestore.getInstance();

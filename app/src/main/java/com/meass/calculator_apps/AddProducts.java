@@ -58,6 +58,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -471,15 +472,49 @@ public class AddProducts extends AppCompatActivity implements AdapterView.OnItem
                                 String  ts = tsLong.toString();
                                 Map<String, Object> user = new HashMap<>();
                                 user.put("first", fatherba.getText().toString());
+                                Calendar calender=Calendar.getInstance();
+                                int year = calender.get(Calendar.YEAR);
+                                int month = calender.get(Calendar.MONTH)+1;
+                                int day = calender.get(Calendar.DATE);
+                                String todays = day+""+month+""+year;
+
                                 firebaseFirestore.collection("ProductsList")
                                         .document(firebaseAuth.getCurrentUser().getEmail())
                                         .collection("New")
-                                        .document(""+today)
-                                        .set(user)
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        .document(""+todays)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                             @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
+                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                               if (task.isSuccessful()) {
+                                                   if (task.getResult().exists()) {
+                                                       double fff = Double.parseDouble("first")+Double.parseDouble(fatherba.getText().toString());
 
+                                                       firebaseFirestore.collection("ProductsList")
+                                                               .document(firebaseAuth.getCurrentUser().getEmail())
+                                                               .collection("New")
+                                                               .document(""+todays)
+                                                               .update("first",""+fff).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                           @Override
+                                                           public void onComplete(@NonNull Task<Void> task) {
+
+                                                           }
+                                                       });
+                                                   }
+                                                   else {
+                                                       firebaseFirestore.collection("ProductsList")
+                                                               .document(firebaseAuth.getCurrentUser().getEmail())
+                                                               .collection("New")
+                                                               .document(""+todays)
+                                                               .set(user)
+                                                               .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                   @Override
+                                                                   public void onComplete(@NonNull Task<Void> task) {
+
+                                                                   }
+                                                               });
+                                                   }
+                                               }
                                             }
                                         });
 

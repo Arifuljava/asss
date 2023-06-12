@@ -1,10 +1,7 @@
 package com.meass.calculator_apps;
 
 public class AddCashmodel {
-    String cus_name,cnumber,joma,p_name,p_quantity,dam,cashjoma,time,email;
-
-    public AddCashmodel() {
-    }
+    String cus_name,cnumber,joma,p_name,p_quantity,dam,cashjoma,time,email,kenadam,sell_dam;
 
     public String getCus_name() {
         return cus_name;
@@ -78,7 +75,23 @@ public class AddCashmodel {
         this.email = email;
     }
 
-    public AddCashmodel(String cus_name, String cnumber, String joma, String p_name, String p_quantity, String dam, String cashjoma, String time, String email) {
+    public String getKenadam() {
+        return kenadam;
+    }
+
+    public void setKenadam(String kenadam) {
+        this.kenadam = kenadam;
+    }
+
+    public String getSell_dam() {
+        return sell_dam;
+    }
+
+    public void setSell_dam(String sell_dam) {
+        this.sell_dam = sell_dam;
+    }
+
+    public AddCashmodel(String cus_name, String cnumber, String joma, String p_name, String p_quantity, String dam, String cashjoma, String time, String email, String kenadam, String sell_dam) {
         this.cus_name = cus_name;
         this.cnumber = cnumber;
         this.joma = joma;
@@ -88,5 +101,10 @@ public class AddCashmodel {
         this.cashjoma = cashjoma;
         this.time = time;
         this.email = email;
+        this.kenadam = kenadam;
+        this.sell_dam = sell_dam;
+    }
+
+    public AddCashmodel() {
     }
 }

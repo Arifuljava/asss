@@ -20,7 +20,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.flatdialoglibrary.dialog.FlatDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +36,7 @@ import com.kaopiz.kprogresshud.KProgressHUD;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +45,7 @@ import es.dmoral.toasty.Toasty;
 
 public class Memo_create extends AppCompatActivity {
     AutoCompleteTextView fatheren;
+    EditText dateofxtpired;
 
 
     @Override
@@ -66,6 +70,7 @@ public class Memo_create extends AppCompatActivity {
         getSupportActionBar().setElevation(10.0f);
         getSupportActionBar().setElevation(10.0f);
         getSupportActionBar().setElevation(10.0f);
+        dateofxtpired=findViewById(R.id.dateofxtpired);
         //fire
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
@@ -118,17 +123,177 @@ public class Memo_create extends AppCompatActivity {
         natii.addTextChangedListener(commission);
         s_kisti.addTextChangedListener(finaltextt);
         //clickable
+        taskCard6.setEnabled(false);
         dailyCheckCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dailyCheckCard.setBackgroundColor(Color.RED);
-                status="বাকি ";
+                if (TextUtils.isEmpty(somitiname.getText().toString())||
+                        TextUtils.isEmpty(sovapoti.getText().toString())||
+                        TextUtils.isEmpty(sovapoti_english.getText().toString())||
+                        TextUtils.isEmpty(fatherba.getText().toString())||
+                        TextUtils.isEmpty(fatheren.getText().toString())||
+                        TextUtils.isEmpty(mother.getText().toString())||
+                        TextUtils.isEmpty(p_address.getText().toString())||
+                        TextUtils.isEmpty(ektir.getText().toString())||
+                        TextUtils.isEmpty(votar.getText().toString())||
+                        TextUtils.isEmpty(natii.getText().toString())||
+                        TextUtils.isEmpty(b_date.getText().toString())||
+                        TextUtils.isEmpty(s_kisti.getText().toString())||
+                        TextUtils.isEmpty(ocupa.getText().toString())||
+                        TextUtils.isEmpty(refer.getText().toString())||
+                        TextUtils.isEmpty(dateofxtpired.getText().toString())) {
+                    Toasty.error(getApplicationContext(),"সমস্ত তথ্য লিখুন",Toasty.LENGTH_SHORT,true).show();
+                    return;
+                }
+                else {
+                    dailyCheckCard.setBackgroundColor(Color.RED);
+                    status = "বাকি ";
+                    taskCard6.setEnabled(true);
+                }
+
             }
         });
+        cirLoginButton.setEnabled(false);
         taskCard6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                status="বাকি ৩ দিন পরে ";
+
+                if (TextUtils.isEmpty(somitiname.getText().toString())||
+                        TextUtils.isEmpty(sovapoti.getText().toString())||
+                        TextUtils.isEmpty(sovapoti_english.getText().toString())||
+                        TextUtils.isEmpty(fatherba.getText().toString())||
+                        TextUtils.isEmpty(fatheren.getText().toString())||
+                        TextUtils.isEmpty(mother.getText().toString())||
+                        TextUtils.isEmpty(p_address.getText().toString())||
+                        TextUtils.isEmpty(ektir.getText().toString())||
+                        TextUtils.isEmpty(votar.getText().toString())||
+                        TextUtils.isEmpty(natii.getText().toString())||
+                        TextUtils.isEmpty(b_date.getText().toString())||
+                        TextUtils.isEmpty(s_kisti.getText().toString())||
+                        TextUtils.isEmpty(ocupa.getText().toString())||
+                        TextUtils.isEmpty(refer.getText().toString())||
+                        TextUtils.isEmpty(dateofxtpired.getText().toString())) {
+                    Toasty.error(getApplicationContext(),"সমস্ত তথ্য লিখুন",Toasty.LENGTH_SHORT,true).show();
+                    return;
+                }
+                else {
+                    final FlatDialog flatDialog1 = new FlatDialog(v.getContext());
+                    flatDialog1.setTitle(" কত দিন")
+                            .setSubtitle("এই বকেয়া টাকা দিতে আপনি কত দিন সময় নিতে চান.")
+                            .setFirstTextFieldHint("দিন")
+                            .setFirstButtonText("এটি আপডেট করুন")
+                            .setSecondButtonText("বাতিল করুন")
+                            .withFirstButtonListner(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    String tt = flatDialog1.getFirstTextField().toString();
+                                    if (TextUtils.isEmpty(tt)
+                                    ) {
+
+                                        Toast.makeText(v.getContext(), "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        flatDialog1.dismiss();
+                                        cirLoginButton.setEnabled(true);
+
+                                        Calendar calender=Calendar.getInstance();
+                                        int year = calender.get(Calendar.YEAR);
+                                        int month = calender.get(Calendar.MONTH)+1;
+                                        int day = calender.get(Calendar.DATE);
+                                        String today = day+""+month+""+year;
+
+                                        firebaseFirestore.collection("DailyCash_Daily")
+                                                .document(firebaseAuth.getCurrentUser().getUid())
+                                                .collection(""+today)
+                                                .document(firebaseAuth.getCurrentUser().getEmail())
+                                                .get()
+                                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                        if (task.isSuccessful()) {
+                                                            if (task.getResult().exists()) {
+                                                                double ddd = Double.parseDouble(task.getResult().getString("baki"))+Double.parseDouble(ocupa.getText().toString());
+                                                                firebaseFirestore.collection("DailyCash_Daily")
+                                                                        .document(firebaseAuth.getCurrentUser().getUid())
+                                                                        .collection(""+today)
+                                                                        .document(firebaseAuth.getCurrentUser().getEmail())
+                                                                        .update("baki",""+ddd)
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                                                            }
+                                                                        });
+                                                                ZoneId z = ZoneId.of( "Asia/Dhaka" );
+                                                                LocalDate today1 = LocalDate.now( z );
+                                                                long tty = System.currentTimeMillis()/1000;
+                                                                BakiDayuModel bakiDayuModel=new BakiDayuModel(firebaseAuth.getCurrentUser().getEmail(),
+                                                                        ""+today1,ocupa.getText().toString(),""+tty);
+                                                                firebaseFirestore.collection("BBakilist")
+                                                                        .document(firebaseAuth.getCurrentUser().getEmail())
+                                                                        .collection("List")
+                                                                        .document(""+tty)
+                                                                        .set(bakiDayuModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                                                    }
+                                                                });
+                                                            }
+                                                            else {
+                                                                double ttt = Double.parseDouble(ocupa.getText().toString());
+                                                                Map<String, Object> user = new HashMap<>();
+                                                                user.put("coin", "0");
+                                                                user.put("baki",""+ttt);
+                                                                user.put("jomadaily","0");
+
+                                                                firebaseFirestore.collection("DailyCash_Daily")
+                                                                        .document(firebaseAuth.getCurrentUser().getUid())
+                                                                        .collection(""+today)
+                                                                        .document(firebaseAuth.getCurrentUser().getEmail())
+                                                                        .set(user)
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                                                            }
+                                                                        });
+                                                            }
+                                                        }
+
+                                                    }
+                                                });
+
+                                        ZoneId z = ZoneId.of( "Asia/Dhaka" );
+                                        LocalDate today1 = LocalDate.now( z );
+                                        long tty = System.currentTimeMillis()/1000;
+                                        BakiDayuModel bakiDayuModel=new BakiDayuModel(firebaseAuth.getCurrentUser().getEmail(),
+                                                ""+today1,ocupa.getText().toString(),""+tty);
+                                        firebaseFirestore.collection("BBakilist")
+                                                .document(firebaseAuth.getCurrentUser().getEmail())
+                                                .collection("List")
+                                                .document(""+tty)
+                                                .set(bakiDayuModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                            }
+                                        });
+
+
+                                    }
+
+                                }
+                            })
+                            .withSecondButtonListner(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    flatDialog1.dismiss();
+                                }
+                            })
+                            .show();
+                }
+
             }
         });
         sikar=findViewById(R.id.sikar);
@@ -173,7 +338,8 @@ public class Memo_create extends AppCompatActivity {
                         TextUtils.isEmpty(b_date.getText().toString())||
                         TextUtils.isEmpty(s_kisti.getText().toString())||
                         TextUtils.isEmpty(ocupa.getText().toString())||
-                        TextUtils.isEmpty(refer.getText().toString())) {
+                        TextUtils.isEmpty(refer.getText().toString())||
+                TextUtils.isEmpty(dateofxtpired.getText().toString())) {
                     Toasty.error(getApplicationContext(),"সমস্ত তথ্য লিখুন",Toasty.LENGTH_SHORT,true).show();
                     return;
                 }
@@ -236,13 +402,14 @@ public class Memo_create extends AppCompatActivity {
 
                                                                     }
                                                                 });
+                                                        long ty = System.currentTimeMillis()/1000;
                                                         MemoProductsModel memoProductsModel=new MemoProductsModel(somitiname.getText().toString(),
                                                                 sovapoti.getText().toString(),sovapoti_english.getText().toString(),fatherba.getText().toString(),
                                                                 fatheren.getText().toString(),mother.getText().toString(),p_address.getText().toString(),
                                                                 ektir.getText().toString(),votar.getText().toString()
                                                                 ,natii.getText().toString(),b_date.getText().toString(),s_kisti.getText().toString(),
                                                                 ocupa.getText().toString(),refer.getText().toString()
-                                                                ,status,""+today,ts,firebaseAuth.getCurrentUser().getEmail(),firebaseAuth.getCurrentUser().getUid());
+                                                                ,status,""+today,ts,firebaseAuth.getCurrentUser().getEmail(),""+ty);
                                                         double dddd=Double.parseDouble(stock)-Double.parseDouble(p_address.getText().toString());
                                                         firebaseFirestore.collection("ProductsList")
                                                                 .document(firebaseAuth.getCurrentUser().getEmail())
@@ -255,6 +422,20 @@ public class Memo_create extends AppCompatActivity {
 
                                                                     }
                                                                 });
+                                                        Calendar calender=Calendar.getInstance();
+                                                        int year = calender.get(Calendar.YEAR);
+                                                        int month = calender.get(Calendar.MONTH)+1;
+                                                        int day = calender.get(Calendar.DATE);
+                                                        String today = day+""+month+""+year;
+                                                        firebaseFirestore.collection("TakingList")
+                                                                .document(firebaseAuth.getCurrentUser().getEmail()).collection("List")
+                                                                .document(""+ty)
+                                                                .set(memoProductsModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                                            }
+                                                        });
 
                                                         firebaseFirestore.collection("MainMemo")
                                                                 .document(firebaseAuth.getCurrentUser().getEmail())
@@ -316,6 +497,7 @@ kk=s.toString();
 if (TextUtils.isEmpty(kk)) {
 }
 else {
+
      sssss =mainvalue-(Double.parseDouble(s_kisti.getText().toString()));
     ocupa.setText(""+sssss);
 

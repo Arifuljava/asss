@@ -131,7 +131,9 @@ public class CashList extends AppCompatActivity {
                                         documentSnapshot.getString("dam")
                                         , documentSnapshot.getString("cashjoma"),
                                         documentSnapshot.getString("time"),
-                                        documentSnapshot.getString("email")
+                                        documentSnapshot.getString("email"),
+                                        documentSnapshot.getString("kenadam"),
+                                        documentSnapshot.getString("sell_dam")
 
                                 );
                                 getList.add(add_customer);

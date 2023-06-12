@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +12,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.flatdialoglibrary.dialog.FlatDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,10 +53,180 @@ public class CashAdapter extends RecyclerView.Adapter<CashAdapter.myview> {
     public void onBindViewHolder(@NonNull myview holder, final int position) {
         firebaseAuth= FirebaseAuth.getInstance();
         firebaseFirestore= FirebaseFirestore.getInstance();
-holder.lastkisti.setText("ক্রেতার নাম : "+data.get(position).getCus_name());
+        double lav = Double.parseDouble(data.get(position).getSell_dam());
+        double kena = Double.parseDouble(data.get(position).getKenadam());
+        if (kena>lav) {
+            double cc = kena- lav;
 
-        holder.kinadam.setText("ক্যাশ  : "+data.get(position).getJoma()+" টাকা");
-    }
+            holder.lastkisti.setText("ক্রেতার নাম : "+data.get(position).getCus_name());
+
+            holder.kinadam.setText("ক্যাশ  : "+data.get(position).getJoma()+" টাকা"+"\n" +
+                    "কেনা দাম :  "+kena+"\n" +
+                    "বিক্রির দাম : "+lav+"\n" +
+                    "ক্ষতি : "+cc);
+
+        }
+        else {
+            double cc = lav- kena;
+            holder.lastkisti.setText("ক্রেতার নাম : "+data.get(position).getCus_name());
+
+            holder.kinadam.setText("ক্যাশ  : "+data.get(position).getJoma()+" টাকা"+"\n" +
+                    "কেনা দাম :  "+kena+"\n" +
+                    "বিক্রির দাম : "+lav+"\n" +
+                    "লাভ : "+cc);
+
+        }
+        holder.card_view8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String list[]={"ক্রেতার নাম ","বিক্রির দাম", "কেনা দাম "};
+                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
+                builder.setTitle("আপডেট অপশন").setItems(list, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    if(which==2) {
+                        final FlatDialog flatDialog1 = new FlatDialog(v.getContext());
+                        flatDialog1.setTitle("আপডেট অপশন")
+                                .setSubtitle("কেনা দাম  আপডেট")
+                                .setFirstTextFieldHint("কেনা দাম")
+                                .setFirstButtonText("এটি আপডেট করুন")
+                                .setSecondButtonText("বাতিল করুন")
+                                .withFirstButtonListner(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String tt = flatDialog1.getFirstTextField().toString();
+                                        if (TextUtils.isEmpty(tt)
+                                        ) {
+
+                                            Toast.makeText(v.getContext(), "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else {
+                                            flatDialog1.dismiss();
+
+                                            firebaseFirestore.collection("AddToCash")
+                                                    .document(firebaseAuth.getCurrentUser().getEmail())
+                                                    .collection("List")
+                                                    .document(data.get(position).getTime())
+                                                    .update("kenadam",""+tt)
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()) {
+                                                                Toast.makeText(v.getContext(), "সম্পন্ন", Toast.LENGTH_SHORT).show();
+                                                            }
+
+                                                        }
+                                                    });
+                                        }
+
+                                    }
+                                })
+                                .withSecondButtonListner(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        flatDialog1.dismiss();
+                                    }
+                                })
+                                .show();
+                    }
+                    else if(which==1) {
+                            final FlatDialog flatDialog1 = new FlatDialog(v.getContext());
+                            flatDialog1.setTitle("আপডেট অপশন")
+                                    .setSubtitle("বিক্রির দাম  আপডেট")
+                                    .setFirstTextFieldHint("বিক্রির দাম")
+                                    .setFirstButtonText("এটি আপডেট করুন")
+                                    .setSecondButtonText("বাতিল করুন")
+                                    .withFirstButtonListner(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            String tt = flatDialog1.getFirstTextField().toString();
+                                            if (TextUtils.isEmpty(tt)
+                                            ) {
+
+                                                Toast.makeText(v.getContext(), "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                            }
+                                            else {
+                                                flatDialog1.dismiss();
+
+                                                firebaseFirestore.collection("AddToCash")
+                                                        .document(firebaseAuth.getCurrentUser().getEmail())
+                                                        .collection("List")
+                                                        .document(data.get(position).getTime())
+                                                        .update("sell_dam",""+tt)
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Toast.makeText(v.getContext(), "সম্পন্ন", Toast.LENGTH_SHORT).show();
+                                                                }
+
+                                                            }
+                                                        });
+                                            }
+
+                                        }
+                                    })
+                                    .withSecondButtonListner(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            flatDialog1.dismiss();
+                                        }
+                                    })
+                                    .show();
+                        }
+                    else   if (which==0) {
+                            final FlatDialog flatDialog1 = new FlatDialog(v.getContext());
+                            flatDialog1.setTitle("আপডেট অপশন")
+                                    .setSubtitle("ক্রেতার নাম আপডেট")
+                                    .setFirstTextFieldHint("নাম")
+                                    .setFirstButtonText("এটি আপডেট করুন")
+                                    .setSecondButtonText("বাতিল করুন")
+                                    .withFirstButtonListner(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            String tt = flatDialog1.getFirstTextField().toString();
+                                            if (TextUtils.isEmpty(tt)
+                                            ) {
+
+                                                Toast.makeText(v.getContext(), "তথ্য লিখুন", Toast.LENGTH_SHORT).show();
+                                            }
+                                            else {
+                                                flatDialog1.dismiss();
+
+                                                firebaseFirestore.collection("AddToCash")
+                                                        .document(firebaseAuth.getCurrentUser().getEmail())
+                                                        .collection("List")
+                                                        .document(data.get(position).getTime())
+                                                        .update("cus_name",""+tt)
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Toast.makeText(v.getContext(), "সম্পন্ন", Toast.LENGTH_SHORT).show();
+                                                                }
+
+                                                            }
+                                                        });
+                                            }
+
+                                        }
+                                    })
+                                    .withSecondButtonListner(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            flatDialog1.dismiss();
+                                        }
+                                    })
+                                    .show();
+                        }
+
+                    }
+                }).create();
+                builder.show();
+            }
+        });
+
+            }
     int flag=1;
 
     @Override

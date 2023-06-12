@@ -320,6 +320,30 @@
                         android:fontFamily="@font/josefinsans_semibold"
                         android:text="মেয়াদ উত্তীর্ন পণ্য  :  0 টি"
                         android:gravity="center_vertical" />
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/appsdownload__3"
+                        android:layout_marginRight="10dp"
+
+                        android:layout_below="@id/image3"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="false"
+                        android:padding="8dp"
+
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="15dp"
+                        android:background="@drawable/myall"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/josefinsans_semibold"
+                        android:text="0"
+                        android:gravity="center_vertical" />
                 </LinearLayout>
 
             </LinearLayout>
