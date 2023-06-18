@@ -63,9 +63,10 @@
                         android:layout_marginLeft="@dimen/space_10dp"
                         android:layout_marginTop="10dp"
                         android:text="সাবেক : "
+                        android:layout_marginRight="90dp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"></TextView>
 
                     <TextView
 
@@ -73,12 +74,13 @@
                         android:id="@+id/customer_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="90dp"
 android:textStyle="bold"
 
                         android:layout_marginLeft="@dimen/space_10dp"
                         android:text="আজকের বাকি : "
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"></TextView>
 
 
                     <TextView
@@ -97,7 +99,8 @@ android:textStyle="bold"
                         android:text="  Requested "
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"
+                        ></TextView>
 
                 </RelativeLayout>
 

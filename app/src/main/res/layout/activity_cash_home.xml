@@ -247,9 +247,10 @@
 
                         </Button>
 
-                        <Button
+                        <LinearLayout
+                            android:orientation="horizontal"
                             android:layout_marginLeft="10dp"
-                            android:id="@+id/taskCard6"
+
 
                             android:layout_width="0dp"
                             android:background="@drawable/jje"
@@ -260,10 +261,33 @@
 
                             android:foreground="?attr/selectableItemBackground"
                             >
+                            <Button
 
+                                android:layout_marginLeft="10dp"
+                                android:id="@+id/taskCard6"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/jje"
 
+                                android:text="0"
+                                android:textColor="@color/white"
 
-                        </Button>
+                                ></Button>
+
+                            <Button
+
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/jje"
+
+                                android:text="টাকা"
+                                android:textColor="@color/white"
+
+                                ></Button>
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -298,8 +322,8 @@
 
 
                             </Button>
-
-                            <Button
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_marginLeft="10dp"
 
 
@@ -312,10 +336,34 @@
 
                                 android:foreground="?attr/selectableItemBackground"
                                 >
+                                <Button
 
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/khattt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
 
+                                    android:text="0"
+                                    android:textColor="@color/white"
 
-                            </Button>
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="টাকা"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
+
 
 
                         </LinearLayout>
@@ -407,50 +455,13 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             >
-
-                            <Button
-
-                                android:layout_width="0dp"
-                                android:id="@+id/todaycash"
-
-                                android:layout_height="100dp"
-                                android:background="@drawable/jje"
-                                android:layout_weight="1"
-                                android:clickable="true"
-                                android:text="0 টাকা"
+                            <LinearLayout
                                 android:layout_marginRight="10dp"
-
-                                android:textColor="@color/white"
-                                >
-
-
-
-                            </Button>
-                            <Button
-
-
-
-                                android:layout_width="0dp"
-                                android:id="@+id/previousbalance"
-                                android:background="@drawable/jje"
-                                android:layout_height="100dp"
-                                android:layout_weight="1"
-                                android:text="0 টাকা"
-                                android:textColor="@color/white"
-
-                                android:foreground="?attr/selectableItemBackground"
-                                >
-
-
-
-                            </Button>
-
-                            <Button
+                                android:orientation="horizontal"
                                 android:layout_marginLeft="10dp"
 
 
                                 android:layout_width="0dp"
-                                android:id="@+id/intotalll"
                                 android:background="@drawable/jje"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"
@@ -459,10 +470,126 @@
 
                                 android:foreground="?attr/selectableItemBackground"
                                 >
+                                <Button
+
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/todaycash"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="0"
+                                    android:textSize="10dp"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="টাকা"
+                                    android:textSize="10dp"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
 
 
+                            <LinearLayout
+                                android:layout_marginRight="10dp"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="10dp"
 
-                            </Button>
+
+                                android:layout_width="0dp"
+                                android:background="@drawable/jje"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:text="0 টাকা"
+                                android:textColor="@color/white"
+
+                                android:foreground="?attr/selectableItemBackground"
+                                >
+                                <Button
+
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/previousbalance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="0"
+                                    android:textSize="10dp"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:textSize="10dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="টাকা"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginRight="10dp"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="10dp"
+
+
+                                android:layout_width="0dp"
+                                android:background="@drawable/jje"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:text="0 টাকা"
+                                android:textColor="@color/white"
+
+                                android:foreground="?attr/selectableItemBackground"
+                                >
+                                <Button
+
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/intotalll"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="0"
+                                    android:textSize="10dp"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="টাকা"
+                                    android:textSize="10dp"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
+
 
 
                         </LinearLayout>
@@ -500,8 +627,8 @@
 
 
                             </Button>
-
-                            <Button
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_marginLeft="10dp"
 
 
@@ -510,15 +637,39 @@
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
                                 android:text="0 টাকা"
-                                android:id="@+id/totalbaki"
                                 android:textColor="@color/white"
 
                                 android:foreground="?attr/selectableItemBackground"
                                 >
+                                <Button
+
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/totalbaki"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/kk"
+
+                                    android:text="0"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/kk"
+
+                                    android:text="টাকা"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
 
 
-
-                            </Button>
 
 
                         </LinearLayout>
@@ -557,14 +708,13 @@
 
 
                             </Button>
-
-                            <Button
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_marginLeft="10dp"
 
 
                                 android:layout_width="0dp"
-                                android:id="@+id/more"
-                                android:background="@drawable/kk"
+                                android:background="@drawable/jje"
                                 android:layout_height="100dp"
                                 android:layout_weight="1"
                                 android:text="0 টাকা"
@@ -572,10 +722,35 @@
 
                                 android:foreground="?attr/selectableItemBackground"
                                 >
+                                <Button
+
+                                    android:layout_marginLeft="10dp"
+                                    android:id="@+id/more"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="0"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                                <Button
+
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/jje"
+
+                                    android:text="টাকা"
+                                    android:textColor="@color/white"
+
+                                    ></Button>
+
+                            </LinearLayout>
 
 
-
-                            </Button>
 
 
                         </LinearLayout>

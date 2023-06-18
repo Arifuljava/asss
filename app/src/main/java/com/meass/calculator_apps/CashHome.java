@@ -33,7 +33,7 @@ import java.util.Calendar;
 import es.dmoral.toasty.Toasty;
 
 public class CashHome extends AppCompatActivity {
-    Button taskCard6;
+    Button taskCard6,khattt;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     String chalan;
@@ -60,6 +60,7 @@ public class CashHome extends AppCompatActivity {
         getSupportActionBar().setElevation(10.0f);
         getSupportActionBar().setElevation(10.0f);
         ///
+        khattt=findViewById(R.id.khattt);
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseFirestore=FirebaseFirestore.getInstance();
         taskCard6=findViewById(R.id.taskCard6);
@@ -75,89 +76,109 @@ public class CashHome extends AppCompatActivity {
                             if (task.getResult().exists()) {
                                 try {
                                     chalan= task.getResult().getString("coin");
-                                    taskCard6.setText(chalan+"টাকা ");
+                                    taskCard6.setText(chalan);
 
-                                    Calendar calender=Calendar.getInstance();
-                                    int year = calender.get(Calendar.YEAR);
-                                    int month = calender.get(Calendar.MONTH)+1;
-                                    int day = calender.get(Calendar.DATE);
-                                    String today = day+""+month+""+year;
-                                    todaycash=findViewById(R.id.todaycash);
-                                    previousbalance=findViewById(R.id.previousbalance);
-                                    totalbaki=findViewById(R.id.totalbaki);
-                                    intotalll=findViewById(R.id.intotalll);
-                                    more=findViewById(R.id.more);
-                                    firebaseFirestore.collection("DailyCash_Daily")
-                                            .document(firebaseAuth.getCurrentUser().getUid())
-                                            .collection(""+today)
-                                            .document(firebaseAuth.getCurrentUser().getEmail())
-                                            .get()
-                                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                    if (task.isSuccessful()) {
-                                                        if (task.getResult().exists()) {
-                                                            try {
-                                                                casssstoday = task.getResult().getString("coin");
-                                                                todaycash.setText(casssstoday+"টাকা ");
-                                                            }catch (Exception e) {
-                                                                casssstoday = task.getResult().getString("coin");
-                                                                todaycash.setText(casssstoday+"টাকা ");
-                                                            }
-                                                        }
-                                                        else {
-                                                            casssstoday = "0";
-                                                            todaycash.setText(casssstoday+"টাকা ");
-                                                        }
-                                                    }
-                                                    else {
-                                                        casssstoday = "0";
-                                                        todaycash.setText(casssstoday+"টাকা ");
-                                                    }
-                                                }
-                                            });
 
-                                    //total count
-                                    firebaseFirestore.collection("Users")
-                                            .document(firebaseAuth.getCurrentUser().getUid())
-                                            .collection("Main_Balance")
-                                            .document(firebaseAuth.getCurrentUser().getEmail())
-                                            .get()
-                                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                    if (task.isSuccessful()) {
-                                                        if (task.getResult().exists()) {
-                                                            try {
-                                                                main_balance= task.getResult().getString("main_balance");
-                                                                previousbalance.setText(main_balance+"টাকা ");
-                                                                purches_balance= task.getResult().getString("purches_balance");
-                                                                totalbaki.setText(purches_balance+"টাকা ");
-                                                                double eee = (Double.parseDouble(casssstoday)+Double.parseDouble(main_balance))-Double.parseDouble(casssstoday);
-                                                                intotalll.setText(""+eee+"টাকা ");
-                                                                double ddddd = eee+Double.parseDouble(purches_balance);
-                                                                double ddddddddd= Double.parseDouble(chalan)-ddddd;
-
-                                                                more.setText(""+ddddddddd+"টাকা ");
-
-                                                            }catch (Exception e) {
-                                                                chalan= task.getResult().getString("coin");
-                                                                taskCard6.setText(chalan+"টাকা ");
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
                                 }catch (Exception e) {
                                     chalan= task.getResult().getString("coin");
-                                    taskCard6.setText(chalan+"টাকা ");
+                                    taskCard6.setText(chalan);
+                                }
+                            }
+                        }
+                    }
+                });
+        ////
+        Calendar calender=Calendar.getInstance();
+        int year = calender.get(Calendar.YEAR);
+        int month = calender.get(Calendar.MONTH)+1;
+        int day = calender.get(Calendar.DATE);
+        String today = day+""+month+""+year;
+        todaycash=findViewById(R.id.todaycash);
+        previousbalance=findViewById(R.id.previousbalance);
+        totalbaki=findViewById(R.id.totalbaki);
+        intotalll=findViewById(R.id.intotalll);
+        more=findViewById(R.id.more);
+        firebaseFirestore.collection("DailyCash_Daily")
+                .document(firebaseAuth.getCurrentUser().getUid())
+                .collection(""+today)
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult().exists()) {
+                                try {
+                                    casssstoday = task.getResult().getString("coin");
+                                    todaycash.setText(casssstoday);
+                                }catch (Exception e) {
+                                    casssstoday = task.getResult().getString("coin");
+                                    todaycash.setText(casssstoday);
+                                }
+                            }
+                            else {
+                                casssstoday = "0";
+                                todaycash.setText(casssstoday );
+                            }
+                        }
+                        else {
+                            casssstoday = "0";
+                            todaycash.setText(casssstoday);
+                        }
+                    }
+                });
+
+        //total count
+        firebaseFirestore.collection("Users")
+                .document(firebaseAuth.getCurrentUser().getUid())
+                .collection("Main_Balance")
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult().exists()) {
+                                try {
+                                    main_balance= task.getResult().getString("main_balance");
+
+                                    double ttt = Double.parseDouble(main_balance)-Double.parseDouble(casssstoday.toString());
+                                    previousbalance.setText(""+ttt);
+                                  //  Toast.makeText(CashHome.this, ""+casssstoday.toString(), Toast.LENGTH_SHORT).show();
+                                    purches_balance= task.getResult().getString("purches_balance");
+                                    totalbaki.setText(purches_balance);
+                                   // intotalll.setText(main_balance);
+                                    String cashwalet=task.getResult().getString("cashwalet");
+                                    khattt.setText(cashwalet);
+
+                                    double ttt11 = Double.parseDouble(main_balance);
+                                    intotalll.setText(""+ttt11);
+                                }catch (Exception e) {
                                 }
                             }
                         }
                     }
                 });
 
+        firebaseFirestore.collection("Users")
+                .document(firebaseAuth.getCurrentUser().getUid())
+                .collection("Coins")
+                .document(firebaseAuth.getCurrentUser().getEmail())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            if (task.getResult().exists()) {
+                                try {
+                                    taskCard6.setText(task.getResult().getString("coin"));
+                                }catch (Exception e) {
+                                }
 
+                            }
+                        }
+                    }
+                });
 
     }
     String main_balance,purches_balance;

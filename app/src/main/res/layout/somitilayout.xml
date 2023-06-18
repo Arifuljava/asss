@@ -64,8 +64,9 @@
                         android:layout_marginTop="10dp"
                         android:text="সাবেক : "
                         android:textStyle="bold"
+                        android:layout_marginRight="90dp"
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"></TextView>
 
                     <TextView
 
@@ -74,30 +75,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 android:textStyle="bold"
+                        android:layout_marginRight="90dp"
 
                         android:layout_marginLeft="@dimen/space_10dp"
                         android:text="আজকের বাকি : "
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"></TextView>
 
 
                     <TextView
                         android:id="@+id/logout"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
 
 
                         android:layout_marginLeft="5dp"
+                        android:textAlignment="center"
                         android:layout_marginTop="@dimen/space_20dp"
                         android:layout_marginRight="20dp"
 
-                        android:text="  কর্ম নির্বাচন করুন "
+                        android:text="  কর্ম \nনির্বাচন\n করুন "
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="12dp"></TextView>
 
                 </RelativeLayout>
 

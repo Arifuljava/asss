@@ -16,10 +16,12 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.flatdialoglibrary.dialog.FlatDialog;
@@ -43,15 +45,24 @@ import java.util.Map;
 
 import es.dmoral.toasty.Toasty;
 
-public class Memo_create extends AppCompatActivity {
+public class Memo_create extends AppCompatActivity implements  AdapterView.OnItemSelectedListener{
     AutoCompleteTextView fatheren;
     EditText dateofxtpired;
+    Spinner mykinggg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo_create);
+        mykinggg=findViewById(R.id.mykinggg);
+        mykinggg.setOnItemSelectedListener(this);
+
+        String[] textSizes1 = getResources().getStringArray(R.array.loop);
+        ArrayAdapter adapte1r = new ArrayAdapter(this,
+                R.layout.spinner_row, textSizes1);
+        adapte1r.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mykinggg.setAdapter(adapte1r);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         toolbar.setTitle("কোম্পানির ম্যামো");
@@ -122,6 +133,7 @@ public class Memo_create extends AppCompatActivity {
         ektir.addTextChangedListener(textpricee1);
         natii.addTextChangedListener(commission);
         s_kisti.addTextChangedListener(finaltextt);
+        mother.addTextChangedListener(dozronwatcher);
         //clickable
         taskCard6.setEnabled(false);
         dailyCheckCard.setOnClickListener(new View.OnClickListener() {
@@ -473,6 +485,40 @@ public class Memo_create extends AppCompatActivity {
 
 
     }
+    String chee;
+    TextWatcher dozronwatcher=new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            chee=s.toString();
+if (TextUtils.isEmpty(chee)) {
+}
+else {
+    if (valueFromSpinner.equals("জোরা")) {
+        double dd = 2* Double.parseDouble(chee);
+        p_address.setText(""+dd);
+    }
+    if (valueFromSpinner.equals("হালি")) {
+        double dd = 4* Double.parseDouble(chee);
+        p_address.setText(""+dd);
+    }
+    if (valueFromSpinner.equals("ডজন")) {
+        double dd = 16* Double.parseDouble(chee);
+        p_address.setText(""+dd);
+    }
+
+}
+        }
+    };
     int flag=0;
 
     String status;
@@ -656,5 +702,18 @@ else {
     public boolean onNavigateUp() {
         startActivity(new Intent(getApplicationContext(),MemoHome.class));
         return true;
+    }
+String valueFromSpinner;
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (parent.getId() == R.id.mykinggg) {
+            valueFromSpinner = parent.getItemAtPosition(position).toString();
+
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

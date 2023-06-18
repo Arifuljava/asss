@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="loop">
+        <item>জোরা</item>
+        <item>হালি</item>
+        <item>ডজন</item>
+    </string-array>
     <string-array name="kisti"
         >
         <item>দৈনিক</item>
